@@ -77,14 +77,14 @@ export function Hero() {
                 className="inline-flex items-center px-5 py-2.5 rounded-full backdrop-blur-xl bg-white/10 border border-white/20 text-sm font-medium mb-4 text-white shadow-lg"
               >
                 <span className="relative flex h-2 w-2 mr-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-400" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
                 </span>
                 Trusted by 500+ YouTubers
               </motion.div>
 
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-red-600 to-red-700">
                   Scale Your
                 </span>
                 <br />
@@ -107,14 +107,14 @@ export function Hero() {
               <Button
                 asChild
                 size="lg"
-                className="group relative overflow-hidden bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white border-0 shadow-2xl hover:shadow-indigo-500/50 transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-6"
+                className="group relative overflow-hidden bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white border-0 shadow-2xl hover:shadow-red-500/50 transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-6"
               >
-                <Link href="#book-call">
+                <Link href="https://wa.me/923030249973" target="_blank" rel="noopener noreferrer">
                   <span className="relative z-10 flex items-center">
                     Book a Call
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Link>
               </Button>
 
@@ -142,7 +142,7 @@ export function Hero() {
                 { value: "24/7", label: "Support" },
               ].map((stat, i) => (
                 <div key={i} className="text-center lg:text-left">
-                  <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">
+                  <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-700">
                     {stat.value}
                   </div>
                   <div className="text-sm text-white/60">{stat.label}</div>
@@ -157,25 +157,25 @@ export function Hero() {
               {
                 title: "Pro Editing",
                 description: "Cinema-quality cuts",
-                gradient: "from-indigo-500 to-blue-500",
+                gradient: "from-red-600 to-red-700",
                 position: "top-4 left-8",
               },
               {
                 title: "AI Automation",
                 description: "Save 20hrs/week",
-                gradient: "from-purple-500 to-pink-500",
+                gradient: "from-red-500 to-red-600",
                 position: "top-24 right-0",
               },
               {
                 title: "SEO Optimized",
                 description: "Rank higher, grow faster",
-                gradient: "from-pink-500 to-rose-500",
+                gradient: "from-red-700 to-red-800",
                 position: "bottom-40 left-0",
               },
               {
                 title: "Thumbnail Design",
                 description: "Stop the scroll",
-                gradient: "from-blue-500 to-cyan-500",
+                gradient: "from-red-500 to-red-700",
                 position: "bottom-16 right-8",
               },
             ].map((card, i) => (

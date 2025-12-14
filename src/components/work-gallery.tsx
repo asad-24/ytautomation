@@ -10,52 +10,50 @@ import { Button } from "./ui/button"
 export function WorkGallery() {
   const { ref, isInView } = useInView({ threshold: 0.1 })
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
+  const [isPausedRow1, setIsPausedRow1] = useState(false)
+  const [isPausedRow2, setIsPausedRow2] = useState(false)
 
-  // Placeholder work items
-  const works = [
-    {
-      id: 1,
-      title: "Tech Review Channel",
-      category: "Editing & Automation",
-      thumbnail: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
-      views: "2M+ views",
-    },
-    {
-      id: 2,
-      title: "Gaming Commentary",
-      category: "Full Production",
-      thumbnail: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=400&fit=crop",
-      views: "5M+ views",
-    },
-    {
-      id: 3,
-      title: "Educational Series",
-      category: "Scripts & Voiceover",
-      thumbnail: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
-      views: "1.5M+ views",
-    },
-    {
-      id: 4,
-      title: "Lifestyle Vlog",
-      category: "Editing & Thumbnails",
-      thumbnail: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
-      views: "3M+ views",
-    },
-    {
-      id: 5,
-      title: "Music Production",
-      category: "Full Production",
-      thumbnail: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600&h=400&fit=crop",
-      views: "4M+ views",
-    },
-    {
-      id: 6,
-      title: "Business Tips",
-      category: "Scripts & SEO",
-      thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      views: "2.5M+ views",
-    },
+  // First row images (moves left to right)
+  const row1Images = [
+    "/how/Untitled design (1).jpg",
+    "/how/Untitled design (2).jpg",
+    "/how/Untitled design (3).jpg",
+    "/how/Untitled design (4).jpg",
+    "/how/Untitled design (5).jpg",
+    "/how/Untitled design (6).jpg",
+    "/how/Untitled design (7).jpg",
+    "/how/Untitled design (8).jpg",
+    "/how/Untitled design (9).jpg",
+    "/how/Untitled design (10).jpg",
+    "/how/15.jpeg",
+    "/how/17.jpeg",
+    "/how/19.jpeg",
+    "/how/7 habits killing your engine thumbnail.jpg",
   ]
+
+  // Second row images (moves right to left)
+  const row2Images = [
+    "/how/Untitled design (11).jpg",
+    "/how/Untitled design (12).jpg",
+    "/how/Untitled design (13).jpg",
+    "/how/Untitled design (14).jpg",
+    "/how/Untitled design (15).jpg",
+    "/how/Untitled design (16).jpg",
+    "/how/Untitled design (17).jpg",
+    "/how/Untitled design (18).jpg",
+    "/how/Untitled design (19).jpg",
+    "/how/Untitled design (20).jpg",
+    "/how/STOP USING DISH SOAP & SPONGES THUMBNAIL.jpg",
+    "/how/THUMBNAIL 2 (1).png",
+    "/how/rich_l.webp",
+    "/how/rrr.webp",
+  ]
+
+  // Duplicate arrays for seamless loop
+  const duplicatedRow1 = [...row1Images, ...row1Images]
+  const duplicatedRow2 = [...row2Images, ...row2Images]
+
+  const allWorks = [...row1Images, ...row2Images]
 
   const openLightbox = (index: number) => {
     setSelectedImage(index)
@@ -71,75 +69,110 @@ export function WorkGallery() {
     if (selectedImage === null) return
     
     if (direction === "prev") {
-      setSelectedImage(selectedImage === 0 ? works.length - 1 : selectedImage - 1)
+      setSelectedImage(selectedImage === 0 ? allWorks.length - 1 : selectedImage - 1)
     } else {
-      setSelectedImage((selectedImage + 1) % works.length)
+      setSelectedImage((selectedImage + 1) % allWorks.length)
     }
   }
 
   return (
     <>
-      <section id="work" className="py-24 px-4 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
+      <section id="work" className="py-24 px-4">
+        <div className="max-w-7xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center"
           >
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-              Our{" "}
-              <span className="bg-clip-text text-transparent bg-linear-to-r from-indigo-500 to-purple-500">
-                Best Work
+              Some of Our{" "}
+              <span className="bg-clip-text text-transparent bg-linear-to-r from-red-500 to-red-700">
+                Work!!
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See the results we've delivered for creators across different niches.
+            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+              Take a look at some of our premium quality thumbnail designs and videos we've made for our clients!
             </p>
           </motion.div>
+        </div>
 
+        {/* First Row - Left to Right */}
+        <div 
+          className="relative flex overflow-hidden mb-6"
+          onMouseEnter={() => setIsPausedRow1(true)}
+          onMouseLeave={() => setIsPausedRow1(false)}
+        >
           <motion.div
-            ref={ref}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="flex gap-6 pr-6"
+            animate={{
+              x: isPausedRow1 ? 0 : [0, -3360],
+            }}
+            transition={{
+              x: {
+                duration: 40,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}
           >
-            {works.map((work, index) => (
+            {duplicatedRow1.map((image, index) => (
               <motion.div
-                key={work.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="group relative aspect-video rounded-2xl overflow-hidden glass-light dark:glass-dark cursor-pointer"
-                onClick={() => openLightbox(index)}
+                key={`row1-${index}`}
+                className="shrink-0 w-80 h-48 relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-red-500/50 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_30px_rgba(239,68,68,0.3)] group"
+                onClick={() => setSelectedImage(index % row1Images.length)}
+                whileHover={{ y: -8 }}
               >
-                {/* Thumbnail */}
-                <div className="absolute inset-0">
-                  <Image
-                    src={work.thumbnail}
-                    alt={work.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                </div>
+                <Image
+                  src={image}
+                  alt={`Work ${index + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="320px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
 
-                {/* Content overlay */}
-                <div className="absolute inset-0 p-6 flex flex-col justify-end transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="text-xs font-semibold text-indigo-400 mb-2">
-                    {work.category}
-                  </span>
-                  <h3 className="text-xl font-bold text-white mb-1">{work.title}</h3>
-                  <p className="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {work.views}
-                  </p>
-                </div>
-
-                {/* Hover border glow */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-indigo-500/50 rounded-2xl transition-colors duration-300" />
+        {/* Second Row - Right to Left */}
+        <div 
+          className="relative flex overflow-hidden"
+          onMouseEnter={() => setIsPausedRow2(true)}
+          onMouseLeave={() => setIsPausedRow2(false)}
+        >
+          <motion.div
+            className="flex gap-6 pr-6"
+            animate={{
+              x: isPausedRow2 ? 0 : [-3360, 0],
+            }}
+            transition={{
+              x: {
+                duration: 40,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}
+          >
+            {duplicatedRow2.map((image, index) => (
+              <motion.div
+                key={`row2-${index}`}
+                className="shrink-0 w-80 h-48 relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-red-500/50 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_30px_rgba(239,68,68,0.3)] group"
+                onClick={() => setSelectedImage(row1Images.length + (index % row2Images.length))}
+                whileHover={{ y: -8 }}
+              >
+                <Image
+                  src={image}
+                  alt={`Work ${row1Images.length + index + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="320px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
             ))}
           </motion.div>
@@ -160,7 +193,7 @@ export function WorkGallery() {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute top-4 right-4 z-10 text-white hover:bg-white/10"
+              className="absolute top-4 right-4 z-10 text-white hover:bg-red-500/20 hover:text-red-500"
               onClick={closeLightbox}
               aria-label="Close"
             >
@@ -171,7 +204,7 @@ export function WorkGallery() {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute left-4 z-10 text-white hover:bg-white/10"
+              className="absolute left-4 z-10 text-white hover:bg-red-500/20 hover:text-red-500"
               onClick={(e) => {
                 e.stopPropagation()
                 navigateImage("prev")
@@ -184,7 +217,7 @@ export function WorkGallery() {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-4 z-10 text-white hover:bg-white/10"
+              className="absolute right-4 z-10 text-white hover:bg-red-500/20 hover:text-red-500"
               onClick={(e) => {
                 e.stopPropagation()
                 navigateImage("next")
@@ -200,25 +233,16 @@ export function WorkGallery() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative max-w-5xl w-full aspect-video"
+              className="relative max-w-5xl w-full aspect-video backdrop-blur-xl bg-white/5 border border-red-500/30 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(239,68,68,0.3)]"
               onClick={(e) => e.stopPropagation()}
             >
               <Image
-                src={works[selectedImage].thumbnail}
-                alt={works[selectedImage].title}
+                src={allWorks[selectedImage]}
+                alt={`Work ${selectedImage + 1}`}
                 fill
-                className="object-contain rounded-lg"
+                className="object-contain"
                 priority
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent rounded-b-lg">
-                <p className="text-sm text-indigo-400 mb-1">
-                  {works[selectedImage].category}
-                </p>
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  {works[selectedImage].title}
-                </h3>
-                <p className="text-gray-300">{works[selectedImage].views}</p>
-              </div>
             </motion.div>
           </motion.div>
         )}

@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useEffect, useState } from "react"
-import { Calendar } from "lucide-react"
+import { Phone } from "lucide-react"
 import { Button } from "./ui/button"
 import Link from "next/link"
 
@@ -14,11 +14,11 @@ export function StickyCTA() {
     scrollY,
     [0, 500, 1000, 1500, 2000],
     [
-      "rgb(99, 102, 241)", // indigo-500
-      "rgb(139, 92, 246)", // violet-500
-      "rgb(168, 85, 247)", // purple-500
-      "rgb(217, 70, 239)", // fuchsia-500
-      "rgb(236, 72, 153)", // pink-500
+      "rgb(239, 68, 68)", // red-500
+      "rgb(220, 38, 38)", // red-600
+      "rgb(185, 28, 28)", // red-700
+      "rgb(220, 38, 38)", // red-600
+      "rgb(239, 68, 68)", // red-500
     ]
   )
 
@@ -55,10 +55,10 @@ export function StickyCTA() {
           size="lg"
           className="group relative overflow-hidden bg-transparent hover:bg-transparent text-white border-0 shadow-none px-8 py-6 text-lg"
         >
-          <Link href="#book-call" id="book-call">
+          <Link href="https://wa.me/923030249973" target="_blank" rel="noopener noreferrer" id="book-call">
             <span className="relative z-10 flex items-center gap-3">
-              <Calendar className="h-5 w-5" />
-              <span className="font-semibold">Book a Free Call</span>
+              <Phone className="h-5 w-5" />
+              <span className="font-semibold">Contact Us</span>
             </span>
 
             {/* Shimmer effect */}

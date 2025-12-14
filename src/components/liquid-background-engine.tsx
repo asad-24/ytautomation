@@ -133,7 +133,7 @@ export function LiquidBackgroundEngine() {
     const initParticles = () => {
       particles = []
       const particleCount = 40
-      const hues = isDark ? [190, 260, 320] : [190, 260, 320]
+      const hues = [0, 5, 355] // Red color hues
 
       for (let i = 0; i < particleCount; i++) {
         const x = Math.random() * window.innerWidth
@@ -166,7 +166,7 @@ export function LiquidBackgroundEngine() {
           const distance = Math.sqrt(dx * dx + dy * dy)
 
           if (distance < 120) {
-            ctx.strokeStyle = `rgba(150, 180, 255, ${
+            ctx.strokeStyle = `rgba(239, 68, 68, ${
               0.3 * (1 - distance / 120)
             })`
             ctx.lineWidth = 1.5

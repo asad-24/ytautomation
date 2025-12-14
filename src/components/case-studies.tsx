@@ -19,7 +19,7 @@ export function CaseStudies() {
         { label: "Time Saved", from: 0, to: 80, suffix: "hrs/mo", icon: Clock },
       ],
       timeframe: "6 months",
-      gradient: "from-indigo-500 to-purple-500",
+      gradient: "from-red-600 to-red-800",
     },
     {
       client: "FitLife Pro",
@@ -31,7 +31,7 @@ export function CaseStudies() {
         { label: "Time Saved", from: 0, to: 60, suffix: "hrs/mo", icon: Clock },
       ],
       timeframe: "8 months",
-      gradient: "from-purple-500 to-pink-500",
+      gradient: "from-red-500 to-red-700",
     },
   ]
 
@@ -47,11 +47,11 @@ export function CaseStudies() {
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             Real Results,{" "}
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-indigo-500 to-purple-500">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-red-500 to-red-700">
               Real Growth
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-white/70 max-w-2xl mx-auto">
             See how we've helped creators transform their channels.
           </p>
         </motion.div>
@@ -64,21 +64,22 @@ export function CaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: studyIndex * 0.2, duration: 0.6 }}
-              className="glass-light dark:glass-dark rounded-3xl p-8 md:p-12 overflow-hidden relative"
+              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 overflow-hidden relative hover:border-red-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(239,68,68,0.2)]"
             >
               {/* Background gradient */}
-              <div className={`absolute top-0 right-0 w-1/2 h-full bg-linear-to-l ${study.gradient} opacity-5`} />
+              <div className={`absolute top-0 right-0 w-1/2 h-full bg-linear-to-l ${study.gradient} opacity-10`} />
+              <div className={`absolute -top-20 -right-20 w-64 h-64 bg-linear-to-br ${study.gradient} opacity-20 blur-3xl rounded-full`} />
 
               {/* Header */}
               <div className="relative mb-8">
                 <div className="flex items-center justify-between flex-wrap gap-4">
                   <div>
-                    <h3 className="text-3xl font-bold mb-2">{study.client}</h3>
-                    <p className="text-muted-foreground">{study.niche}</p>
+                    <h3 className="text-3xl font-bold mb-2 text-white">{study.client}</h3>
+                    <p className="text-white/60">{study.niche}</p>
                   </div>
-                  <div className="text-right">
-                    <div className="text-sm text-muted-foreground mb-1">Timeframe</div>
-                    <div className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-indigo-500 to-purple-500">
+                  <div className="text-right backdrop-blur-xl bg-red-500/10 border border-red-500/20 rounded-2xl px-6 py-3">
+                    <div className="text-sm text-white/60 mb-1">Timeframe</div>
+                    <div className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-red-500 to-red-700">
                       {study.timeframe}
                     </div>
                   </div>
@@ -145,18 +146,19 @@ function MetricCard({
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
-      className="relative p-6 glass rounded-xl hover:scale-105 transition-transform duration-300"
+      className="relative p-6 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl hover:scale-105 hover:border-red-500/50 hover:bg-white/10 transition-all duration-300 hover:shadow-[0_0_30px_rgba(239,68,68,0.15)] group"
     >
-      <metric.icon className="h-8 w-8 text-indigo-500 mb-3" />
-      <div className="text-3xl font-bold mb-1">
+      <div className="absolute inset-0 bg-linear-to-br from-red-500/0 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+      <metric.icon className="relative h-8 w-8 text-red-500 mb-3 drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
+      <div className="relative text-3xl font-bold mb-1 text-white">
         <motion.span>{rounded}</motion.span>
-        {metric.suffix && <span className="text-lg">{metric.suffix}</span>}
+        {metric.suffix && <span className="text-lg text-white/80">{metric.suffix}</span>}
       </div>
-      <div className="text-sm text-muted-foreground">{metric.label}</div>
+      <div className="relative text-sm text-white/60">{metric.label}</div>
 
       {/* Arrow indicator */}
       <div className="absolute top-4 right-4">
-        <TrendingUp className="h-5 w-5 text-green-500" />
+        <TrendingUp className="h-5 w-5 text-red-500 drop-shadow-[0_0_6px_rgba(239,68,68,0.8)]" />
       </div>
     </motion.div>
   )

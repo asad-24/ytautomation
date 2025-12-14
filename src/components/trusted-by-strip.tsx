@@ -2,15 +2,24 @@
 
 import { motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 
 export function TrustedByStrip() {
   const [isPaused, setIsPaused] = useState(false)
   const scrollerRef = useRef<HTMLDivElement>(null)
 
-  // Duplicate logos array for seamless loop
+  // Trusted creator logos
   const logos = [
-    "TechCrunch", "Wired", "Forbes", "The Verge", "Mashable",
-    "Engadget", "CNET", "Ars Technica", "VentureBeat", "TechRadar"
+    { src: "/tenpics/1.png", alt: "Creator 1" },
+    { src: "/tenpics/2.png", alt: "Creator 2" },
+    { src: "/tenpics/3.png", alt: "Creator 3" },
+    { src: "/tenpics/4.png", alt: "Creator 4" },
+    { src: "/tenpics/5.png", alt: "Creator 5" },
+    { src: "/tenpics/6.png", alt: "Creator 6" },
+    { src: "/tenpics/7.png", alt: "Creator 7" },
+    { src: "/tenpics/8.png", alt: "Creator 8" },
+    { src: "/tenpics/9.png", alt: "Creator 9" },
+    { src: "/tenpics/10.png", alt: "Creator 10" },
   ]
 
   const duplicatedLogos = [...logos, ...logos]
@@ -22,9 +31,9 @@ export function TrustedByStrip() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center text-sm uppercase tracking-wider text-muted-foreground font-semibold"
+          className="text-center text-sm uppercase tracking-wider text-white/80 font-semibold"
         >
-          Trusted by creators at
+          Trusted by 500+ YouTubers
         </motion.p>
       </div>
 
@@ -50,11 +59,17 @@ export function TrustedByStrip() {
           {duplicatedLogos.map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-48 h-24 glass rounded-xl flex items-center justify-center hover:glass-light dark:hover:glass-dark transition-all duration-300 hover:scale-105"
+              className="shrink-0 w-36 h-24 backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl overflow-hidden hover:border-red-500/50 hover:bg-white/15 transition-all duration-300 hover:scale-105"
             >
-              <span className="text-xl font-bold text-muted-foreground">
-                {logo}
-              </span>
+              <div className="relative w-full h-full">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 40vw, 192px"
+                />
+              </div>
             </div>
           ))}
         </motion.div>

@@ -11,11 +11,13 @@ import { Footer } from "@/components/footer";
 import { StickyCTA } from "@/components/sticky-cta";
 import { LiquidBackgroundEngine } from "@/components/liquid-background-engine";
 import { LiquidSection } from "@/components/liquid-section";
+import { YoutubeBubbles } from "@/components/youtube-bubbles";
 
 export default function Home() {
   return (
     <>
       <LiquidBackgroundEngine />
+      <YoutubeBubbles />
       <LiquidHeader />
       <main className="overflow-hidden relative">
         <LiquidSection theme="hero">
