@@ -107,12 +107,12 @@ export function LiquidHeader() {
                 whileHover={{ rotate: 360, scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.6 }}
-                className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center font-bold text-white text-xl shadow-lg"
+                className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center font-bold text-white text-xl shadow-lg"
               >
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-red-400/20 to-red-600/20 animate-pulse" />
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-400/20 to-pink-600/20 animate-pulse" />
                 <span className="relative z-10">YT</span>
               </motion.div>
-              <span className="font-bold text-xl hidden sm:inline bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-700">
+              <span className="font-bold text-xl hidden sm:inline bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-600">
                 YT Services
               </span>
             </Link>
@@ -135,7 +135,7 @@ export function LiquidHeader() {
                       
                       {/* Liquid Hover Glow */}
                       <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-red-500/0 via-red-500/20 to-red-500/0 opacity-0 group-hover:opacity-100"
+                        className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/20 to-purple-500/0 opacity-0 group-hover:opacity-100"
                         initial={false}
                         whileHover={{
                           scale: [1, 1.2, 1],
@@ -145,7 +145,7 @@ export function LiquidHeader() {
 
                       {/* Bubble Float */}
                       <motion.div
-                        className="absolute bottom-0 left-1/2 w-2 h-2 bg-red-400/40 rounded-full blur-sm"
+                        className="absolute bottom-0 left-1/2 w-2 h-2 bg-purple-400/40 rounded-full blur-sm"
                         animate={{
                           y: [-20, -40, -20],
                           x: [-5, 5, -5],
@@ -172,7 +172,7 @@ export function LiquidHeader() {
               >
                 <Button
                   asChild
-                  className="hidden sm:flex relative overflow-hidden bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white border-0 shadow-lg hover:shadow-red-500/50 transition-all duration-300"
+                  className="hidden sm:flex relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
                 >
                   <Link
                     href="https://wa.me/923030249973"
@@ -187,7 +187,7 @@ export function LiquidHeader() {
                   >
                     <span className="relative z-10">Book a Call</span>
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-red-400/30 to-red-600/30"
+                      className="absolute inset-0 bg-gradient-to-r from-purple-400/30 to-pink-600/30"
                       animate={{
                         scale: [1, 1.5, 1],
                         opacity: [0.5, 0, 0.5],
@@ -241,7 +241,7 @@ export function LiquidHeader() {
                 ))}
                 <Button
                   asChild
-                  className="w-full bg-gradient-to-r from-red-600 to-red-700 text-white"
+                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white"
                 >
                   <Link
                     href="https://wa.me/923030249973"

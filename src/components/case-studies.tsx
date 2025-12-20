@@ -19,7 +19,7 @@ export function CaseStudies() {
         { label: "Time Saved", from: 0, to: 80, suffix: "hrs/mo", icon: Clock },
       ],
       timeframe: "6 months",
-      gradient: "from-red-600 to-red-800",
+      gradient: "from-purple-600 to-pink-600",
     },
     {
       client: "FitLife Pro",
@@ -31,7 +31,7 @@ export function CaseStudies() {
         { label: "Time Saved", from: 0, to: 60, suffix: "hrs/mo", icon: Clock },
       ],
       timeframe: "8 months",
-      gradient: "from-red-500 to-red-700",
+      gradient: "from-purple-500 to-purple-600",
     },
   ]
 
@@ -47,7 +47,7 @@ export function CaseStudies() {
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             Real Results,{" "}
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-red-500 to-red-700">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-pink-600">
               Real Growth
             </span>
           </h2>
@@ -64,7 +64,7 @@ export function CaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: studyIndex * 0.2, duration: 0.6 }}
-              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 overflow-hidden relative hover:border-red-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(239,68,68,0.2)]"
+              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 overflow-hidden relative hover:border-purple-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(147,51,234,0.2)]"
             >
               {/* Background gradient */}
               <div className={`absolute top-0 right-0 w-1/2 h-full bg-linear-to-l ${study.gradient} opacity-10`} />
@@ -77,9 +77,9 @@ export function CaseStudies() {
                     <h3 className="text-3xl font-bold mb-2 text-white">{study.client}</h3>
                     <p className="text-white/60">{study.niche}</p>
                   </div>
-                  <div className="text-right backdrop-blur-xl bg-red-500/10 border border-red-500/20 rounded-2xl px-6 py-3">
+                  <div className="text-right backdrop-blur-xl bg-purple-500/10 border border-purple-500/20 rounded-2xl px-6 py-3">
                     <div className="text-sm text-white/60 mb-1">Timeframe</div>
-                    <div className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-red-500 to-red-700">
+                    <div className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-pink-600">
                       {study.timeframe}
                     </div>
                   </div>
@@ -146,10 +146,10 @@ function MetricCard({
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.5 }}
-      className="relative p-6 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl hover:scale-105 hover:border-red-500/50 hover:bg-white/10 transition-all duration-300 hover:shadow-[0_0_30px_rgba(239,68,68,0.15)] group"
+      className="relative p-6 backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl hover:scale-105 hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 hover:shadow-[0_0_30px_rgba(147,51,234,0.15)] group"
     >
-      <div className="absolute inset-0 bg-linear-to-br from-red-500/0 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-      <metric.icon className="relative h-8 w-8 text-red-500 mb-3 drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]" />
+      <div className="absolute inset-0 bg-linear-to-br from-purple-500/0 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+      <metric.icon className="relative h-8 w-8 text-purple-500 mb-3 drop-shadow-[0_0_8px_rgba(147,51,234,0.6)]" />
       <div className="relative text-3xl font-bold mb-1 text-white">
         <motion.span>{rounded}</motion.span>
         {metric.suffix && <span className="text-lg text-white/80">{metric.suffix}</span>}
@@ -158,7 +158,7 @@ function MetricCard({
 
       {/* Arrow indicator */}
       <div className="absolute top-4 right-4">
-        <TrendingUp className="h-5 w-5 text-red-500 drop-shadow-[0_0_6px_rgba(239,68,68,0.8)]" />
+        <TrendingUp className="h-5 w-5 text-purple-500 drop-shadow-[0_0_6px_rgba(147,51,234,0.8)]" />
       </div>
     </motion.div>
   )

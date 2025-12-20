@@ -12,6 +12,7 @@ import { StickyCTA } from "@/components/sticky-cta";
 import { LiquidBackgroundEngine } from "@/components/liquid-background-engine";
 import { LiquidSection } from "@/components/liquid-section";
 import { YoutubeBubbles } from "@/components/youtube-bubbles";
+import FAQAccordion from "@/components/faq-accordion";
 
 export default function Home() {
   return (
@@ -47,6 +48,10 @@ export default function Home() {
         
         <LiquidSection theme="testimonials">
           <Testimonials />
+        </LiquidSection>
+        
+        <LiquidSection theme="pricing" id="faq">
+          <FAQAccordion />
         </LiquidSection>
         
         <LiquidSection theme="footer">

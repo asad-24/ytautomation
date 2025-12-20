@@ -12,63 +12,63 @@ export function ServicesGrid() {
       icon: TrendingUp,
       title: "1. Niche Research",
       description: "Identification of profitable niches • Competitor & audience analysis",
-      gradient: "from-red-600 to-red-700",
+      gradient: "from-purple-600 to-pink-600",
       highlights: ["Profitable niche identification", "Competitor analysis", "Audience research"],
     },
     {
       icon: FileText,
       title: "2. Content & Idea Research",
       description: "Viral topic discovery • High-CTR & high-retention content angles • Competitor performance breakdown • Evergreen + trending hybrid ideas",
-      gradient: "from-red-500 to-red-600",
+      gradient: "from-purple-500 to-purple-600",
       highlights: ["Viral topics", "High-CTR angles", "Performance analysis"],
     },
     {
       icon: Edit3,
       title: "3. High-Retention Script Writing",
       description: "Engaging, story-driven scripts • Strong hooks and retention-focused structure • SEO-optimized and fact-checked writing • Tailored tone & style for your niche",
-      gradient: "from-red-700 to-red-800",
+      gradient: "from-pink-600 to-purple-700",
       highlights: ["Story-driven scripts", "Strong hooks", "SEO-optimized"],
     },
     {
       icon: Mic,
       title: "4. Professional Voiceovers",
       description: "Studio-quality male & female voiceovers • US, UK, and Neutral accents available • Emotion-driven delivery for better retention",
-      gradient: "from-red-600 to-red-700",
+      gradient: "from-purple-600 to-pink-600",
       highlights: ["Studio quality", "Multiple accents", "Emotion-driven"],
     },
     {
       icon: Zap,
       title: "5. Video Editing (Premium Quality)",
       description: "Fast-paced, engaging editing style • Stock footage and transitions • Background music & sound design • Optimized for maximum watch time",
-      gradient: "from-red-500 to-red-700",
+      gradient: "from-purple-500 to-pink-500",
       highlights: ["Fast-paced editing", "Stock footage", "Sound design"],
     },
     {
       icon: Image,
       title: "6. Thumbnail Design (High CTR)",
       description: "Eye-catching, scroll-stopping designs • Strong emotions, bold text & clean layout • A/B tested hooks & visual psychology • Fully brand-consistent graphics",
-      gradient: "from-red-700 to-red-800",
+      gradient: "from-pink-600 to-purple-700",
       highlights: ["Scroll-stopping designs", "A/B tested", "Brand-consistent"],
     },
     {
       icon: TrendingUp,
       title: "7. YouTube SEO Optimization",
       description: "Keyword research & metadata optimization • Title, description & tag optimization • Audience targeting & ranking strategy • Playlist & channel structure setup",
-      gradient: "from-red-600 to-red-700",
+      gradient: "from-purple-600 to-pink-600",
       highlights: ["Keyword research", "Metadata optimization", "Ranking strategy"],
     },
     {
       icon: TrendingUp,
       title: "8. Growth Analysis & Performance Tracking",
       description: "Monthly analytics reports • Competitor benchmarking • Content performance insights • Growth strategy recommendations",
-      gradient: "from-red-500 to-red-600",
+      gradient: "from-purple-500 to-purple-600",
       highlights: ["Analytics reports", "Benchmarking", "Strategy recommendations"],
     },
     {
       icon: Zap,
       title: "9. Channel Creation & Branding",
       description: "Complete YouTube channel setup • Professional logo & banner design • Branding guidelines (fonts, colors, style) • About section copywriting",
-      gradient: "from-red-700 to-red-800",
+      gradient: "from-pink-600 to-purple-700",
       highlights: ["Complete setup", "Professional design", "Branding guidelines"],
     },
   ]
@@ -105,7 +105,7 @@ export function ServicesGrid() {
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
             YouTube Automation Services:{" "}
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-red-500 to-red-700">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-pink-600">
               Step-by-Step
             </span>
           </h2>
@@ -125,13 +125,13 @@ export function ServicesGrid() {
             <motion.div
               key={service.title}
               variants={itemVariants}
-              className="group relative p-8 backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl hover:scale-105 hover:border-red-500/50 transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative p-8 backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl hover:scale-105 hover:border-purple-500/50 transition-all duration-300 cursor-pointer overflow-hidden"
             >
               {/* Background gradient on hover */}
-              <div className="absolute inset-0 bg-linear-to-br from-red-500/10 to-red-700/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-linear-to-br from-purple-500/10 to-pink-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Icon */}
-              <div className={`relative w-16 h-16 rounded-2xl bg-linear-to-br ${service.gradient} flex items-center justify-center mb-6 shadow-lg shadow-red-500/30 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
+              <div className={`relative w-16 h-16 rounded-2xl bg-linear-to-br ${service.gradient} flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
                 <service.icon className="h-8 w-8 text-white" />
               </div>
 
@@ -141,7 +141,7 @@ export function ServicesGrid() {
 
               {/* Shine effect */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute inset-0 bg-linear-to-r from-transparent via-red-500/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                <div className="absolute inset-0 bg-linear-to-r from-transparent via-purple-500/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               </div>
             </motion.div>
           ))}

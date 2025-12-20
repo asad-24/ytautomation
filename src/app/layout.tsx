@@ -35,9 +35,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
-        <LiquidProvider>
-          {children}
-        </LiquidProvider>
+        <ThemeProvider defaultTheme="dark">
+          <LiquidProvider>
+            {children}
+          </LiquidProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

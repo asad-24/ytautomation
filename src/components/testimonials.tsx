@@ -58,8 +58,8 @@ export function Testimonials() {
   return (
     <section className="py-24 px-4 overflow-hidden relative">
       {/* Background gradient orbs */}
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-red-700/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-pink-600/10 rounded-full blur-3xl" />
       
       <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
@@ -71,7 +71,7 @@ export function Testimonials() {
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             What{" "}
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-red-500 to-red-700">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-pink-600">
               Creators Say
             </span>
           </h2>
@@ -82,13 +82,13 @@ export function Testimonials() {
 
         {/* Testimonial Slider */}
         <div className="relative">
-          <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden group hover:border-red-500/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(239,68,68,0.2)]">
+          <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden group hover:border-purple-500/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(147,51,234,0.2)]">
             {/* Gradient background overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-red-500/0 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute -top-20 -right-20 w-64 h-64 bg-red-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             {/* Quote icon */}
-            <Quote className="absolute top-8 right-8 h-24 w-24 text-red-500/20 drop-shadow-[0_0_10px_rgba(239,68,68,0.3)]" />
+            <Quote className="absolute top-8 right-8 h-24 w-24 text-purple-500/20 drop-shadow-[0_0_10px_rgba(147,51,234,0.3)]" />
 
             <motion.div
               key={activeIndex}
@@ -101,7 +101,7 @@ export function Testimonials() {
               {/* Rating */}
               <div className="flex gap-1 mb-6">
                 {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
-                  <Star key={i} className="h-6 w-6 fill-yellow-500 text-yellow-500 drop-shadow-[0_0_6px_rgba(239,68,68,0.6)]" />
+                  <Star key={i} className="h-6 w-6 fill-yellow-500 text-yellow-500 drop-shadow-[0_0_6px_rgba(147,51,234,0.6)]" />
                 ))}
               </div>
 
@@ -112,7 +112,7 @@ export function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center text-white font-bold text-xl shadow-[0_0_20px_rgba(239,68,68,0.4)]">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold text-xl shadow-[0_0_20px_rgba(147,51,234,0.4)]">
                   {testimonials[activeIndex].avatar}
                 </div>
                 <div>
@@ -120,7 +120,7 @@ export function Testimonials() {
                   <div className="text-sm text-white/60">
                     {testimonials[activeIndex].role} • {testimonials[activeIndex].channel}
                   </div>
-                  <div className="text-sm text-red-500 font-semibold drop-shadow-[0_0_4px_rgba(239,68,68,0.4)]">
+                  <div className="text-sm text-purple-500 font-semibold drop-shadow-[0_0_4px_rgba(147,51,234,0.4)]">
                     {testimonials[activeIndex].subscribers} Subscribers
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export function Testimonials() {
               variant="outline"
               size="icon"
               onClick={prevTestimonial}
-              className="backdrop-blur-xl bg-white/5 border-white/20 hover:bg-white/10 hover:border-red-500/50 rounded-full text-white hover:text-red-400 transition-all duration-300"
+              className="backdrop-blur-xl bg-white/5 border-white/20 hover:bg-white/10 hover:border-purple-500/50 rounded-full text-white hover:text-purple-400 transition-all duration-300"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -148,7 +148,7 @@ export function Testimonials() {
                   onClick={() => setActiveIndex(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     index === activeIndex
-                      ? "w-8 bg-gradient-to-r from-red-500 to-red-700 shadow-[0_0_10px_rgba(239,68,68,0.6)]"
+                      ? "w-8 bg-gradient-to-r from-purple-500 to-pink-600 shadow-[0_0_10px_rgba(147,51,234,0.6)]"
                       : "w-2 bg-white/30 hover:bg-white/50"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
@@ -160,7 +160,7 @@ export function Testimonials() {
               variant="outline"
               size="icon"
               onClick={nextTestimonial}
-              className="backdrop-blur-xl bg-white/5 border-white/20 hover:bg-white/10 hover:border-red-500/50 rounded-full text-white hover:text-red-400 transition-all duration-300"
+              className="backdrop-blur-xl bg-white/5 border-white/20 hover:bg-white/10 hover:border-purple-500/50 rounded-full text-white hover:text-purple-400 transition-all duration-300"
               aria-label="Next testimonial"
             >
               <ChevronRight className="h-5 w-5" />

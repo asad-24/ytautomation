@@ -88,7 +88,7 @@ export function WorkGallery() {
           >
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">
               Some of Our{" "}
-              <span className="bg-clip-text text-transparent bg-linear-to-r from-red-500 to-red-700">
+              <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-pink-600">
                 Work!!
               </span>
             </h2>
@@ -120,7 +120,7 @@ export function WorkGallery() {
             {duplicatedRow1.map((image, index) => (
               <motion.div
                 key={`row1-${index}`}
-                className="shrink-0 w-80 h-48 relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-red-500/50 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_30px_rgba(239,68,68,0.3)] group"
+                className="shrink-0 w-80 h-48 relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group"
                 onClick={() => setSelectedImage(index % row1Images.length)}
                 whileHover={{ y: -8 }}
               >
@@ -132,7 +132,7 @@ export function WorkGallery() {
                   sizes="320px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-0 bg-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
             ))}
           </motion.div>
@@ -160,7 +160,7 @@ export function WorkGallery() {
             {duplicatedRow2.map((image, index) => (
               <motion.div
                 key={`row2-${index}`}
-                className="shrink-0 w-80 h-48 relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-red-500/50 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_30px_rgba(239,68,68,0.3)] group"
+                className="shrink-0 w-80 h-48 relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group"
                 onClick={() => setSelectedImage(row1Images.length + (index % row2Images.length))}
                 whileHover={{ y: -8 }}
               >
@@ -172,7 +172,7 @@ export function WorkGallery() {
                   sizes="320px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-0 bg-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
             ))}
           </motion.div>
@@ -193,7 +193,7 @@ export function WorkGallery() {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute top-4 right-4 z-10 text-white hover:bg-red-500/20 hover:text-red-500"
+              className="absolute top-4 right-4 z-10 text-white hover:bg-purple-500/20 hover:text-purple-500"
               onClick={closeLightbox}
               aria-label="Close"
             >
@@ -204,7 +204,7 @@ export function WorkGallery() {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute left-4 z-10 text-white hover:bg-red-500/20 hover:text-red-500"
+              className="absolute left-4 z-10 text-white hover:bg-purple-500/20 hover:text-purple-500"
               onClick={(e) => {
                 e.stopPropagation()
                 navigateImage("prev")
@@ -217,7 +217,7 @@ export function WorkGallery() {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-4 z-10 text-white hover:bg-red-500/20 hover:text-red-500"
+              className="absolute right-4 z-10 text-white hover:bg-purple-500/20 hover:text-purple-500"
               onClick={(e) => {
                 e.stopPropagation()
                 navigateImage("next")
@@ -233,7 +233,7 @@ export function WorkGallery() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative max-w-5xl w-full aspect-video backdrop-blur-xl bg-white/5 border border-red-500/30 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(239,68,68,0.3)]"
+              className="relative max-w-5xl w-full aspect-video backdrop-blur-xl bg-white/5 border border-purple-500/30 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)]"
               onClick={(e) => e.stopPropagation()}
             >
               <Image

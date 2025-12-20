@@ -32,7 +32,7 @@ export function Header() {
             <motion.div
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
-              className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center font-bold text-white text-xl"
+              className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center font-bold text-white text-xl"
             >
               YT
             </motion.div>
@@ -58,7 +58,7 @@ export function Header() {
             <ThemeToggle />
             <Button
               asChild
-              className="hidden sm:flex bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+              className="hidden sm:flex bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
             >
               <Link href="#book-call">Book a Call</Link>
             </Button>
@@ -94,7 +94,7 @@ export function Header() {
               ))}
               <Button
                 asChild
-                className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
+                className="w-full bg-gradient-to-r from-purple-500 to-pink-600 text-white"
               >
                 <Link href="#book-call" onClick={() => setMobileMenuOpen(false)}>
                   Book a Call

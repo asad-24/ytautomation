@@ -2,20 +2,17 @@
 
 import { useEffect, useRef, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { useTheme } from "@/components/theme-provider"
 import { useLiquid } from "@/contexts/liquid-context"
 import { liquidThemes } from "@/lib/liquid-themes"
 
 export function LiquidBackgroundEngine() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const { theme } = useTheme()
   const { activeTheme, ripples, isTransitioning } = useLiquid()
   const [useWebGL, setUseWebGL] = useState(true)
   const [mounted, setMounted] = useState(false)
 
   const currentTheme = liquidThemes[activeTheme]
-  const isDark = theme === "dark"
-  const themeColors = isDark ? currentTheme.dark : currentTheme.light
+  const themeColors = currentTheme.colors
 
   useEffect(() => {
     setMounted(true)
@@ -187,7 +184,7 @@ export function LiquidBackgroundEngine() {
       window.removeEventListener("resize", resize)
       cancelAnimationFrame(animationFrameId)
     }
-  }, [useWebGL, mounted, isDark, ripples])
+  }, [useWebGL, mounted, ripples])
 
   if (!mounted) return null
 
@@ -196,7 +193,7 @@ export function LiquidBackgroundEngine() {
       {/* Layer 1: Base Gradient */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={`${activeTheme}-${isDark ? "dark" : "light"}-base`}
+          key={`${activeTheme}-base`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -211,7 +208,7 @@ export function LiquidBackgroundEngine() {
       {/* Layer 2: Animated Blobs (CSS Fallback) */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={`${activeTheme}-${isDark ? "dark" : "light"}-blobs`}
+          key={`${activeTheme}-blobs`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -248,7 +245,7 @@ export function LiquidBackgroundEngine() {
       {/* Layer 4: Shimmer Overlay */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={`${activeTheme}-${isDark ? "dark" : "light"}-shine`}
+          key={`${activeTheme}-shine`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
