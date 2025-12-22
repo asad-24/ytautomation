@@ -46,7 +46,7 @@ const FAQAccordion = () => {
     }
   ];
 
-  const toggleItem = (index) => {
+  const toggleItem = (index: number) => {
     setOpenItems(prev =>
       prev.includes(index)
         ? prev.filter(i => i !== index)

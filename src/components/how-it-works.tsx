@@ -87,7 +87,7 @@ export function HowItWorks() {
     },
   ]
 
-  const renderSteps = (steps, title, subtitle, icon) => (
+  const renderSteps = (steps: any[], title: string, subtitle: string, icon: React.ReactNode) => (
     <motion.div
       key={title}
       initial={{ opacity: 0, y: 20 }}
