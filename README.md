@@ -1,4 +1,4 @@
-# YT Services - Advanced Liquid Crystal Landing Page
+# YTAGENCY - Advanced Liquid Crystal Landing Page
 
 A stunning, high-performance Next.js landing page for a YouTube services business featuring an **advanced liquid-crystal background system**, interactive glassmorphism design, section-specific themes, and ultra-smooth animations.
 

@@ -24,14 +24,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "YT Services - Professional YouTube Growth Solutions",
-    template: "%s | YT Services"
+    default: "YTAGENCY - Professional YouTube Growth Solutions",
+    template: "%s | YTAGENCY"
   },
   description: "Scale your YouTube channel with professional video editing, automation, and growth services. Trusted by 500+ creators.",
   keywords: ["youtube services", "video editing", "youtube automation", "thumbnail design", "youtube seo"],
-  authors: [{ name: "YT Services Team" }],
-  creator: "YT Services",
-  publisher: "YT Services",
+  authors: [{ name: "YTAGENCY Team" }],
+  creator: "YTAGENCY",
+  publisher: "YTAGENCY",
   formatDetection: {
     email: false,
     address: false,
@@ -42,16 +42,16 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "YT Services - Professional YouTube Growth Solutions",
+    title: "YTAGENCY - Professional YouTube Growth Solutions",
     description: "Scale your YouTube channel with professional video editing, automation, and growth services.",
     url: "https://ytservices.com",
-    siteName: "YT Services",
+    siteName: "YTAGENCY",
     images: [
       {
         url: "/og-image.jpg", // Add this image to your public folder
         width: 1200,
         height: 630,
-        alt: "YT Services - Professional YouTube Growth Solutions",
+        alt: "YTAGENCY - Professional YouTube Growth Solutions",
       },
     ],
     locale: "en_US",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "YT Services - Professional YouTube Growth Solutions",
+    title: "YTAGENCY - Professional YouTube Growth Solutions",
     description: "Scale your YouTube channel with professional video editing, automation, and growth services.",
     images: ["/og-image.jpg"],
     creator: "@ytservices", // Replace with your Twitter handle

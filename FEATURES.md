@@ -1,4 +1,4 @@
-# YT Services Landing Page - Features & Components
+# YTAGENCY Landing Page - Features & Components
 
 ## ✨ Visual Features Implemented
 

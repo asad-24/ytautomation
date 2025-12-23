@@ -103,13 +103,13 @@ export function ServicesGrid() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
             YouTube Automation Services:{" "}
             <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-pink-600">
               Step-by-Step
             </span>
           </h2>
-          <p className="text-lg text-white/80 max-w-3xl mx-auto">
+          <p className="text-base text-white/80 max-w-3xl mx-auto">
             Complete end-to-end YouTube automation solutions. From niche research to growth tracking—we handle everything.
           </p>
         </motion.div>
@@ -125,19 +125,19 @@ export function ServicesGrid() {
             <motion.div
               key={service.title}
               variants={itemVariants}
-              className="group relative p-8 backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl hover:scale-105 hover:border-purple-500/50 transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative p-6 backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl hover:scale-105 hover:border-purple-500/50 transition-all duration-300 cursor-pointer overflow-hidden"
             >
               {/* Background gradient on hover */}
               <div className="absolute inset-0 bg-linear-to-br from-purple-500/10 to-pink-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Icon */}
-              <div className={`relative w-16 h-16 rounded-2xl bg-linear-to-br ${service.gradient} flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
-                <service.icon className="h-8 w-8 text-white" />
+              <div className={`relative w-12 h-12 rounded-2xl bg-linear-to-br ${service.gradient} flex items-center justify-center mb-4 shadow-lg shadow-purple-500/30 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
+                <service.icon className="h-6 w-6 text-white" />
               </div>
 
               {/* Content */}
-              <h3 className="relative text-xl font-bold mb-4 text-white">{service.title}</h3>
-              <p className="relative text-base text-white/90 leading-relaxed mb-4">{service.description}</p>
+              <h3 className="relative text-lg font-bold mb-3 text-white">{service.title}</h3>
+              <p className="relative text-sm text-white/90 leading-relaxed mb-3">{service.description}</p>
 
               {/* Shine effect */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">

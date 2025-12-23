@@ -112,7 +112,7 @@ export function Pricing() {
   }
 
   return (
-    <section id="pricing" className="py-24 px-4 relative overflow-hidden">
+    <section id="pricing" className="py-8 px-4 relative overflow-hidden">
       {/* Background gradient orbs */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-pink-600/10 rounded-full blur-3xl" />
@@ -125,13 +125,13 @@ export function Pricing() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Professional{" "}
             <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-pink-600">
               Video Packages
             </span>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+          <p className="text-base text-white/70 max-w-2xl mx-auto mb-8">
             Choose the package that fits your content needs. All packages include high-quality production and unlimited revisions.
           </p>
         </motion.div>
@@ -149,7 +149,7 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className={`relative p-8 backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl hover:scale-105 hover:border-purple-500/50 transition-all duration-500 group hover:shadow-[0_0_50px_rgba(147,51,234,0.25)] overflow-visible ${
+              className={`relative p-6 backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl hover:scale-105 hover:border-purple-500/50 transition-all duration-500 group hover:shadow-[0_0_50px_rgba(147,51,234,0.25)] overflow-visible ${
                 plan.popular ? "lg:pb-12 border-purple-500/30" : ""
               }`}
             >
@@ -177,19 +177,19 @@ export function Pricing() {
               )}
               <div className="relative z-10">
                 {/* Plan header */}
-                <div className="mb-6">
-                  <h3 className="text-3xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors duration-300">{plan.name}</h3>
+                <div className="mb-4">
+                  <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-purple-400 transition-colors duration-300">{plan.name}</h3>
                   <p className="text-sm text-white/60">{plan.description}</p>
                 </div>
 
                 {/* Price */}
-                <div className="mb-8">
+                <div className="mb-6">
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl font-bold text-white/50 line-through">
+                      <span className="text-xl font-bold text-white/50 line-through">
                         ${plan.originalPrice}
                       </span>
-                      <span className="text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-green-400 to-green-500">
+                      <span className="text-3xl font-bold bg-clip-text text-transparent bg-linear-to-r from-green-400 to-green-500">
                         ${getPrice(plan.originalPrice, plan.discountedPrice)}
                       </span>
                     </div>
@@ -200,10 +200,10 @@ export function Pricing() {
                 </div>
 
                 {/* Features */}
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-3 mb-6">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-purple-500 shrink-0 mt-0.5 drop-shadow-[0_0_6px_rgba(147,51,234,0.6)]" />
+                      <Check className="h-4 w-4 text-purple-500 shrink-0 mt-0.5 drop-shadow-[0_0_6px_rgba(147,51,234,0.6)]" />
                       <span className="text-sm text-white/80">{feature}</span>
                     </li>
                   ))}
@@ -234,7 +234,7 @@ export function Pricing() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="mt-16 text-center"
         >
-          <p className="text-white/70 mb-4 text-lg">
+          <p className="text-white/70 mb-4 text-base">
             Need a custom plan? Let's talk about your specific requirements.
           </p>
           <Button variant="outline" size="lg" asChild className="backdrop-blur-xl bg-white/5 border-white/20 hover:bg-white/10 hover:border-purple-500/50 text-white hover:text-purple-400 transition-all duration-300">

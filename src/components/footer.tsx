@@ -53,7 +53,7 @@ export function Footer() {
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center font-bold text-white text-xl">
                 YT
               </div>
-              <span className="font-bold text-xl">YT Services</span>
+              <span className="font-bold text-xl">YTAGENCY</span>
             </div>
             <p className="text-sm text-muted-foreground mb-6">
               Professional YouTube services to scale your channel and maximize growth.
@@ -95,7 +95,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <p className="text-sm text-muted-foreground">
-            © 2024 YT Services. All rights reserved.
+            © 2024 YTAGENCY. All rights reserved.
           </p>
           <div className="flex items-center space-x-2 text-sm text-muted-foreground">
             <Mail className="h-4 w-4" />

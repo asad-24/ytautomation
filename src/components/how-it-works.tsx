@@ -94,7 +94,7 @@ export function HowItWorks() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="mb-20"
+      className="mb-16"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -102,13 +102,13 @@ export function HowItWorks() {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="text-center mb-12"
       >
-        <div className="flex items-center justify-center gap-3 mb-4">
+        <div className="flex items-center justify-center gap-3 mb-3">
           {icon}
-          <h3 className="text-3xl sm:text-4xl font-bold text-white">
+          <h3 className="text-2xl sm:text-3xl font-bold text-white">
             {title}
           </h3>
         </div>
-        <p className="text-lg text-white/70 max-w-2xl mx-auto">
+        <p className="text-sm text-white/70 max-w-2xl mx-auto">
           {subtitle}
         </p>
       </motion.div>
@@ -117,7 +117,7 @@ export function HowItWorks() {
         {/* Timeline line - hidden on mobile */}
         <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 via-pink-500 to-purple-600 opacity-30 rounded-full" />
 
-        <div className="space-y-8 lg:space-y-16">
+        <div className="space-y-6 lg:space-y-1">
           {steps.map((step, index) => (
             <motion.div
               key={`${title}-${step.number}`}
@@ -130,35 +130,35 @@ export function HowItWorks() {
             >
               {/* Content Card */}
               <div className="flex-1 lg:w-5/12">
-                <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-6 hover:scale-105 hover:border-purple-500/50 transition-all duration-500 group hover:shadow-[0_0_40px_rgba(147,51,234,0.2)] overflow-hidden">
+                <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-3 hover:scale-105 hover:border-purple-500/50 transition-all duration-500 group hover:shadow-[0_0_40px_rgba(147,51,234,0.2)] overflow-hidden">
                   {/* Gradient background overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className={`absolute top-0 ${index % 2 === 0 ? 'right-0' : 'left-0'} w-32 h-32 bg-purple-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
                   <div className="relative z-10">
-                    <div className="text-5xl mb-4 drop-shadow-[0_0_10px_rgba(239,68,68,0.3)]">{step.icon}</div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-6xl font-bold text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-pink-600 drop-shadow-[0_0_20px_rgba(147,51,234,0.4)]">
+                    <div className="text-2xl mb-2 drop-shadow-[0_0_10px_rgba(239,68,68,0.3)]">{step.icon}</div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-3xl font-bold text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-pink-600 drop-shadow-[0_0_20px_rgba(147,51,234,0.4)]">
                         {step.number}
                       </span>
-                      <h4 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300">{step.title}</h4>
+                      <h4 className="text-base font-bold text-white group-hover:text-purple-400 transition-colors duration-300">{step.title}</h4>
                     </div>
-                    <p className="text-white/70 leading-relaxed text-sm">
+                    <p className="text-white/70 leading-relaxed text-xs">
                       {step.description}
                     </p>
 
                     {/* Hover arrow */}
-                    <div className="mt-4 flex items-center text-purple-500 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-2">
-                      <span className="text-sm font-semibold mr-2">Learn more</span>
-                      <ArrowRight className="h-4 w-4" />
+                    <div className="mt-3 flex items-center text-purple-500 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-0 group-hover:translate-x-2">
+                      <span className="text-xs font-semibold mr-2">Learn more</span>
+                      <ArrowRight className="h-3 w-3" />
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Timeline Dot */}
-              <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full backdrop-blur-xl bg-purple-600/20 border-4 border-purple-500/30 items-center justify-center z-10 shadow-[0_0_30px_rgba(147,51,234,0.4)]">
-                <CheckCircle2 className="h-8 w-8 text-purple-500 drop-shadow-[0_0_8px_rgba(147,51,234,0.8)]" />
+              <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full backdrop-blur-xl bg-purple-600/20 border-4 border-purple-500/30 items-center justify-center z-10 shadow-[0_0_30px_rgba(147,51,234,0.4)]">
+                <CheckCircle2 className="h-6 w-6 text-purple-500 drop-shadow-[0_0_8px_rgba(147,51,234,0.8)]" />
               </div>
 
               {/* Spacer for other side */}
@@ -171,7 +171,7 @@ export function HowItWorks() {
   )
 
   return (
-    <section id="process" className="py-24 px-4 relative overflow-hidden">
+    <section id="process" className="py-6 px-4 relative overflow-hidden">
       {/* Background gradient orbs */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/10 rounded-full blur-3xl" />
@@ -182,24 +182,24 @@ export function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-4"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+          <h2 className="text-4xl sm:text-3xl font-bold mb-3">
             Process
           </h2>
-          <h3 className="text-3xl sm:text-4xl font-bold mb-6">
+          <h3 className="text-xl sm:text-2xl font-bold mb-2">
             How It{" "}
             <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-pink-600">
               Works…
             </span>
           </h3>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-12">
+          <p className="text-sm text-white/70 max-w-2xl mx-auto mb-2">
             A simple and smooth process to scale your YouTube automation channel.
           </p>
 
           {/* Toggle Switch */}
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <span className={`text-lg font-semibold transition-colors duration-300 ${showBeginners ? 'text-white' : 'text-white/50'}`}>
+          <div className="flex items-center justify-center gap-4 mb-2">
+            <span className={`text-sm font-semibold transition-colors duration-300 ${showBeginners ? 'text-white' : 'text-white/50'}`}>
               Beginners
             </span>
             <button
@@ -210,7 +210,7 @@ export function HowItWorks() {
                 showBeginners ? 'left-1' : 'left-9'
               }`} />
             </button>
-            <span className={`text-lg font-semibold transition-colors duration-300 ${!showBeginners ? 'text-white' : 'text-white/50'}`}>
+            <span className={`text-sm font-semibold transition-colors duration-300 ${!showBeginners ? 'text-white' : 'text-white/50'}`}>
               Existing Channels
             </span>
           </div>

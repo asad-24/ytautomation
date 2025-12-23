@@ -69,26 +69,26 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             What{" "}
             <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-pink-600">
               Creators Say
             </span>
           </h2>
-          <p className="text-lg text-white/70">
+          <p className="text-base text-white/70">
             Don't just take our word for it. Here's what our clients have to say.
           </p>
         </motion.div>
 
         {/* Testimonial Slider */}
         <div className="relative">
-          <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden group hover:border-purple-500/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(147,51,234,0.2)]">
+          <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 relative overflow-hidden group hover:border-purple-500/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(147,51,234,0.2)]">
             {/* Gradient background overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="absolute -top-20 -right-20 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             {/* Quote icon */}
-            <Quote className="absolute top-8 right-8 h-24 w-24 text-purple-500/20 drop-shadow-[0_0_10px_rgba(147,51,234,0.3)]" />
+            <Quote className="absolute top-6 right-6 h-16 w-16 text-purple-500/20 drop-shadow-[0_0_10px_rgba(147,51,234,0.3)]" />
 
             <motion.div
               key={activeIndex}
@@ -106,17 +106,17 @@ export function Testimonials() {
               </div>
 
               {/* Content */}
-              <blockquote className="text-xl md:text-2xl leading-relaxed mb-8 text-white/90">
+              <blockquote className="text-lg md:text-xl leading-relaxed mb-6 text-white/90">
                 "{testimonials[activeIndex].content}"
               </blockquote>
 
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold text-xl shadow-[0_0_20px_rgba(147,51,234,0.4)]">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold text-lg shadow-[0_0_20px_rgba(147,51,234,0.4)]">
                   {testimonials[activeIndex].avatar}
                 </div>
                 <div>
-                  <div className="font-semibold text-xl text-white">{testimonials[activeIndex].name}</div>
+                  <div className="font-semibold text-lg text-white">{testimonials[activeIndex].name}</div>
                   <div className="text-sm text-white/60">
                     {testimonials[activeIndex].role} • {testimonials[activeIndex].channel}
                   </div>

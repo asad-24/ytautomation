@@ -69,7 +69,7 @@ const FAQAccordion = () => {
         </div>
 
         {/* Title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
           Frequently Asked{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700">
             Questions
@@ -89,9 +89,9 @@ const FAQAccordion = () => {
             >
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full p-6 flex items-start justify-between text-left transition-colors"
+                className="w-full p-4 flex items-start justify-between text-left transition-colors"
               >
-                <span className="font-semibold text-lg pr-4 leading-relaxed">
+                <span className="font-semibold text-base pr-4 leading-relaxed">
                   {faq.question}
                 </span>
                 {openItems.includes(index) ? (
@@ -102,7 +102,7 @@ const FAQAccordion = () => {
               </button>
 
               {openItems.includes(index) && (
-                <div className="px-6 pb-6 animate-in fade-in slide-in-from-top-2 duration-300">
+                <div className="px-4 pb-4 animate-in fade-in slide-in-from-top-2 duration-300">
                   <p className="text-white/95 leading-relaxed">
                     {faq.answer}
                   </p>
@@ -114,9 +114,9 @@ const FAQAccordion = () => {
 
         {/* Have a different question button */}
         <div className="mb-8">
-          <button className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-semibold py-4 px-6 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(147,51,234,0.4)] hover:shadow-[0_0_30px_rgba(147,51,234,0.6)]">
+          <button className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-semibold py-3 px-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 shadow-[0_0_20px_rgba(147,51,234,0.4)] hover:shadow-[0_0_30px_rgba(147,51,234,0.6)]">
             <span>Have a different question?</span>
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 
@@ -124,7 +124,7 @@ const FAQAccordion = () => {
         <div className="flex justify-center">
           <button
             onClick={() => openModal("Custom Package", 0, "Let's discuss your specific video production needs")}
-            className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 hover:bg-gradient-to-r hover:from-purple-700 hover:to-pink-800 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(147,51,234,0.4)] hover:shadow-[0_0_30px_rgba(147,51,234,0.6)] cursor-pointer"
+            className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 hover:bg-gradient-to-r hover:from-purple-700 hover:to-pink-800 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(147,51,234,0.4)] hover:shadow-[0_0_30px_rgba(147,51,234,0.6)] cursor-pointer"
           >
             Get Started
           </button>

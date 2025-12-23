@@ -112,8 +112,8 @@ export function LiquidHeader() {
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-400/20 to-pink-600/20 animate-pulse" />
                 <span className="relative z-10">YT</span>
               </motion.div>
-              <span className="font-bold text-xl hidden sm:inline bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-600">
-                YT Services
+              <span className="font-bold text-lg hidden sm:inline bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-600">
+                YTAGENCY
               </span>
             </Link>
 

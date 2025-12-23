@@ -53,7 +53,7 @@ export function StickyCTA() {
         <Button
           asChild
           size="lg"
-          className="group relative overflow-hidden bg-transparent hover:bg-transparent text-white border-0 shadow-none px-8 py-6 text-lg"
+          className="group relative overflow-hidden bg-transparent hover:bg-transparent text-white border-0 shadow-none px-6 py-4 text-base"
         >
           <Link href="https://wa.me/923030249973" target="_blank" rel="noopener noreferrer" id="book-call">
             <span className="relative z-10 flex items-center gap-3">

@@ -83,7 +83,7 @@ export function Hero() {
                 Trusted by 500+ YouTubers
               </motion.div>
 
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700">
                   Scale Your
                 </span>
@@ -94,7 +94,7 @@ export function Hero() {
 
             <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0"
+              className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto lg:mx-0"
             >
               Professional video editing, automation, and growth services that help creators
               focus on what matters most — creating amazing content.
@@ -107,12 +107,12 @@ export function Hero() {
               <Button
                 asChild
                 size="lg"
-                className="group relative overflow-hidden bg-gradient-to-r from-purple-700 to-pink-700 hover:from-purple-800 hover:to-pink-800 text-white border-0 shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:-translate-y-1 text-lg px-8 py-6"
+                className="group relative overflow-hidden bg-gradient-to-r from-purple-700 to-pink-700 hover:from-purple-800 hover:to-pink-800 text-white border-0 shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:-translate-y-1 text-base px-6 py-4"
               >
                 <Link href="https://wa.me/923030249973" target="_blank" rel="noopener noreferrer">
                   <span className="relative z-10 flex items-center">
                     Book a Call
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Link>
@@ -122,10 +122,10 @@ export function Hero() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="group glass-light dark:glass-dark hover:scale-105 transition-all duration-300 text-lg px-8 py-6"
+                className="group glass-light dark:glass-dark hover:scale-105 transition-all duration-300 text-base px-6 py-4"
               >
                 <Link href="#work">
-                  <Play className="mr-2 h-5 w-5" />
+                  <Play className="mr-2 h-4 w-4" />
                   See Our Work
                 </Link>
               </Button>

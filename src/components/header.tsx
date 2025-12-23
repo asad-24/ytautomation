@@ -30,13 +30,17 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             <motion.div
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6 }}
-              className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center font-bold text-white text-xl"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className="w-12 h-12 rounded-xl overflow-hidden"
             >
-              YT
+              <img
+                src="/header-logo.jpg"
+                alt="YTAGENCY Logo"
+                className="w-full h-full object-cover"
+              />
             </motion.div>
-            <span className="font-bold text-xl hidden sm:inline">YT Services</span>
+            <span className="font-bold text-xl hidden sm:inline">YTAGENCY</span>
           </Link>
 
           {/* Desktop Navigation */}
