@@ -23,7 +23,7 @@ const nextConfig: NextConfig = {
   compress: true,
 
   // Turbopack configuration - disabled to avoid framer-motion HMR issues
-  // turbopack: {},
+  turbopack: {},
 
   // Compiler optimizations
   compiler: {
