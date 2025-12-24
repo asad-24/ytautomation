@@ -33,7 +33,7 @@ export function TrustedByStrip() {
           viewport={{ once: true }}
           className="text-center text-sm uppercase tracking-wider text-white/80 font-semibold"
         >
-          Trusted by 500+ YouTubers
+          Trusted by 100+ YouTubers
         </motion.p>
       </div>
 

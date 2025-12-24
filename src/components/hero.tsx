@@ -80,7 +80,7 @@ export function Hero() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-500 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500" />
                 </span>
-                Trusted by 500+ YouTubers
+                Trusted by 100+ YouTubers
               </motion.div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
@@ -138,7 +138,7 @@ export function Hero() {
             >
               {[
                 { value: "50M+", label: "Views Generated" },
-                { value: "500+", label: "Happy Clients" },
+                { value: "100+", label: "Happy Clients" },
                 { value: "24/7", label: "Support" },
               ].map((stat, i) => (
                 <div key={i} className="text-center lg:text-left">
@@ -155,26 +155,26 @@ export function Hero() {
           <div className="relative h-[600px] hidden lg:block">
             {[
               {
-                title: "Pro Editing",
-                description: "Cinema-quality cuts",
+                title: "Profitable Niches",
+                description: "We start with proven niches and ideas backed by research, not assumptions.",
                 gradient: "from-purple-700 to-pink-700",
                 position: "top-4 left-8",
               },
               {
-                title: "AI Automation",
-                description: "Save 20hrs/week",
+                title: "High-Retention Content System",
+                description: "Our scripts, editing, and thumbnails are designed to keep viewers watching longer.",
                 gradient: "from-purple-600 to-purple-700",
                 position: "top-24 right-0",
               },
               {
-                title: "SEO Optimized",
-                description: "Rank higher, grow faster",
+                title: "End-to-End Automation",
+                description: "From ideas to upload-ready videos, we handle the entire process for you.",
                 gradient: "from-pink-700 to-purple-800",
                 position: "bottom-40 left-0",
               },
               {
-                title: "Thumbnail Design",
-                description: "Stop the scroll",
+                title: "Consistent & Scalable Growth",
+                description: "We focus on steady channel growth built for long-term results.",
                 gradient: "from-purple-600 to-pink-600",
                 position: "bottom-16 right-8",
               },

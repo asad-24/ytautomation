@@ -8,7 +8,6 @@ import { HowItWorks } from "@/components/how-it-works";
 import { Pricing } from "@/components/pricing";
 import { Testimonials } from "@/components/testimonials";
 import { Footer } from "@/components/footer";
-import { StickyCTA } from "@/components/sticky-cta";
 import { LiquidBackgroundEngine } from "@/components/liquid-background-engine";
 import { LiquidSection } from "@/components/liquid-section";
 import { YoutubeBubbles } from "@/components/youtube-bubbles";
@@ -58,7 +57,6 @@ export default function Home() {
           <Footer />
         </LiquidSection>
       </main>
-      <StickyCTA />
     </>
   );
 }

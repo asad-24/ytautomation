@@ -50,36 +50,36 @@ export function StickyCTA() {
         style={{ backgroundColor }}
         className="rounded-full shadow-2xl backdrop-blur-xl"
       >
-        <Button
-          asChild
-          size="lg"
-          className="group relative overflow-hidden bg-transparent hover:bg-transparent text-white border-0 shadow-none px-6 py-4 text-base"
+        <Link
+          href="https://wa.me/923187588853"
+          target="_blank"
+          rel="noopener noreferrer"
+          id="book-call"
+          className="group relative overflow-hidden bg-transparent hover:bg-transparent text-white border-0 shadow-none px-6 py-4 text-base rounded-full shadow-2xl backdrop-blur-xl inline-flex items-center justify-center z-20"
         >
-          <Link href="https://wa.me/923030249973" target="_blank" rel="noopener noreferrer" id="book-call">
-            <span className="relative z-10 flex items-center gap-3">
-              <Phone className="h-5 w-5" />
-              <span className="font-semibold">Contact Us</span>
-            </span>
+          {/* <span className="relative z-10 flex items-center gap-3 cursor-pointer">
+            <Phone className="h-5 w-5" />
+            <span className="font-semibold">Contact Us</span>
+          </span> */}
 
-            {/* Shimmer effect */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-              initial={{ x: "-100%" }}
-              animate={{ x: "200%" }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "linear",
-                repeatDelay: 1,
-              }}
-            />
-          </Link>
-        </Button>
+          {/* Shimmer effect */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+            initial={{ x: "-100%" }}
+            animate={{ x: "200%" }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "linear",
+              repeatDelay: 1,
+            }}
+          />
+        </Link>
       </motion.div>
 
       {/* Pulse ring */}
       <motion.div
-        className="absolute inset-0 rounded-full border-2 border-white/50"
+        className="absolute inset-0 rounded-full border-2 border-white/50 z-"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.5, 0, 0.5],

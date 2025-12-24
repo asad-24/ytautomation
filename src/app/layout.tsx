@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     default: "YTAGENCY - Professional YouTube Growth Solutions",
     template: "%s | YTAGENCY"
   },
-  description: "Scale your YouTube channel with professional video editing, automation, and growth services. Trusted by 500+ creators.",
+  description: "Scale your YouTube channel with professional video editing, automation, and growth services. Trusted by 100+ creators.",
   keywords: ["youtube services", "video editing", "youtube automation", "thumbnail design", "youtube seo"],
   authors: [{ name: "YTAGENCY Team" }],
   creator: "YTAGENCY",
