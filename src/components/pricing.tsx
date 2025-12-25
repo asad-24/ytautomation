@@ -238,7 +238,7 @@ export function Pricing() {
             Need a custom plan? Let's talk about your specific requirements.
           </p>
           <Button variant="outline" size="lg" asChild className="backdrop-blur-xl bg-white/5 border-white/20 hover:bg-white/10 hover:border-purple-500/50 text-white hover:text-purple-400 transition-all duration-300">
-            <Link href="https://wa.me/923030249973" target="_blank" rel="noopener noreferrer">Contact Sales</Link>
+            <Link href="https://wa.me/923187588853" target="_blank" rel="noopener noreferrer">Contact Sales</Link>
           </Button>
         </motion.div>
       </div>

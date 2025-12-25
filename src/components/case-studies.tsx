@@ -36,7 +36,7 @@ export function CaseStudies() {
 
   return (
     <section id="case-studies" className="py-24 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-full mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,52 +57,45 @@ export function CaseStudies() {
 
         <div ref={ref} className="space-y-12">
           {/* Channel Images Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
+          <div className="flex flex-wrap gap-4 justify-center">
             {channelImages.flatMap((channel) =>
               channel.images.map((image, imageIndex) => (
                 <motion.div
                   key={`${channel.channel}-${imageIndex}`}
                   initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                  animate={{ y: [0, -8, 0], rotate: [0, 5, -5, 0], x: [0, 5, -5, 0] }}
                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{
                     delay: (channelImages.indexOf(channel) * 3 + imageIndex) * 0.1,
                     duration: 0.5,
                     type: "spring",
-                    stiffness: 100
+                    stiffness: 100,
+                    y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
+                    rotate: { repeat: Infinity, duration: 4, ease: "easeInOut" },
+                    x: { repeat: Infinity, duration: 4, ease: "easeInOut" }
                   }}
                   whileHover={{
                     scale: 1.05,
                     y: -8,
                     transition: { duration: 0.2 }
                   }}
-                  className="relative aspect-video rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group cursor-pointer"
+                  className="relative w-40 h-40 rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group cursor-pointer"
                 >
                   <Image
                     src={image}
                     alt={`${channel.channel} thumbnail ${imageIndex + 1}`}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes="160px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  {/* Channel label */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="backdrop-blur-xl bg-black/50 border border-white/20 rounded-xl px-3 py-2">
-                      <p className="text-white text-sm font-semibold">{channel.channel}</p>
-                    </div>
-                  </div>
+               
                 </motion.div>
               ))
             )}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

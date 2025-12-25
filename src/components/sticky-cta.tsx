@@ -57,10 +57,10 @@ export function StickyCTA() {
           id="book-call"
           className="group relative overflow-hidden bg-transparent hover:bg-transparent text-white border-0 shadow-none px-6 py-4 text-base rounded-full shadow-2xl backdrop-blur-xl inline-flex items-center justify-center z-20"
         >
-          {/* <span className="relative z-10 flex items-center gap-3 cursor-pointer">
+          <span className="relative z-10 flex items-center gap-3 cursor-pointer">
             <Phone className="h-5 w-5" />
             <span className="font-semibold">Contact Us</span>
-          </span> */}
+          </span>
 
           {/* Shimmer effect */}
           <motion.div

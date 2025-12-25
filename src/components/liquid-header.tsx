@@ -109,8 +109,12 @@ export function LiquidHeader() {
                 transition={{ duration: 0.6 }}
                 className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center font-bold text-white text-xl shadow-lg"
               >
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-400/20 to-pink-600/20 animate-pulse" />
-                <span className="relative z-10">YT</span>
+
+                 <img
+                src="/header-logo.jpg"
+                alt="YTAGENCY Logo"
+                className="w-full h-full object-cover"
+              />
               </motion.div>
               <span className="font-bold text-lg hidden sm:inline bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-600">
                 YTAGENCY
@@ -175,7 +179,7 @@ export function LiquidHeader() {
                   className="hidden sm:flex relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
                 >
                   <Link
-                    href="https://wa.me/923030249973"
+                    href="https://wa.me/923187588853"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => {
@@ -244,7 +248,7 @@ export function LiquidHeader() {
                   className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white"
                 >
                   <Link
-                    href="https://wa.me/923030249973"
+                    href="https://wa.me/923187588853"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => {

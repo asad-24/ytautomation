@@ -50,9 +50,11 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center font-bold text-white text-xl">
-                YT
-              </div>
+                <img
+                src="/header-logo.jpg"
+                alt="YTAGENCY Logo"
+                className=" object-cover h-8 w-8"
+              />
               <span className="font-bold text-xl">YTAGENCY</span>
             </div>
             <p className="text-sm text-muted-foreground mb-6">

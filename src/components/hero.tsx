@@ -109,9 +109,9 @@ export function Hero() {
                 size="lg"
                 className="group relative overflow-hidden bg-gradient-to-r from-purple-700 to-pink-700 hover:from-purple-800 hover:to-pink-800 text-white border-0 shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:-translate-y-1 text-base px-6 py-4"
               >
-                <Link href="https://wa.me/923030249973" target="_blank" rel="noopener noreferrer">
+                <Link href="https://wa.me/923187588853" target="_blank" rel="noopener noreferrer">
                   <span className="relative z-10 flex items-center">
-                    GET STARTED
+                    Start now
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -154,29 +154,30 @@ export function Hero() {
           {/* Right: Floating Cards */}
           <div className="relative h-[600px] hidden lg:block">
             {[
+             
               {
                 title: "Profitable Niches",
                 description: "We start with proven niches and ideas backed by research, not assumptions.",
                 gradient: "from-purple-700 to-pink-700",
-                position: "top-4 left-8",
+                position: "top-0 left-0",
               },
               {
                 title: "High-Retention Content System",
                 description: "Our scripts, editing, and thumbnails are designed to keep viewers watching longer.",
                 gradient: "from-purple-600 to-purple-700",
-                position: "top-24 right-0",
+                position: "top-0 right-0",
               },
               {
                 title: "End-to-End Automation",
                 description: "From ideas to upload-ready videos, we handle the entire process for you.",
                 gradient: "from-pink-700 to-purple-800",
-                position: "bottom-40 left-0",
+                position: "bottom-0 left-0",
               },
               {
                 title: "Consistent & Scalable Growth",
                 description: "We focus on steady channel growth built for long-term results.",
                 gradient: "from-purple-600 to-pink-600",
-                position: "bottom-16 right-8",
+                position: "bottom-0 right-0",
               },
             ].map((card, i) => (
               <motion.div
