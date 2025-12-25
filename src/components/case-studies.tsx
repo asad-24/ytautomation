@@ -57,6 +57,20 @@ export function CaseStudies() {
     },
   ]
 
+  const allImages = channelImages.flatMap((channel) =>
+    channel.images.map((image, imageIndex) => ({
+      image,
+      channel: channel.channel,
+      index: imageIndex
+    }))
+  )
+
+  const rows = [
+    allImages.slice(0, 9),
+    allImages.slice(9, 18),
+    allImages.slice(18)
+  ]
+
   return (
     <section id="case-studies" className="py-24 px-4">
       <div className="max-w-full mx-auto">
@@ -78,18 +92,17 @@ export function CaseStudies() {
           </p>
         </motion.div>
 
-        <div ref={ref} className="space-y-12">
-          {/* Channel Images Grid */}
-          <div className="flex flex-wrap gap-4 justify-center">
-            {channelImages.flatMap((channel) =>
-              channel.images.map((image, imageIndex) => (
-                <Link key={`${channel.channel}-${imageIndex}`} href="https://drive.google.com/drive/folders/1JnhCMppSMNmna59w5wNW0VsniaQDmWus?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <div ref={ref} className="space-y-8">
+          {rows.map((row, rowIndex) => (
+            <div key={rowIndex} className="flex gap-4 overflow-x-auto md:overflow-x-visible md:flex-wrap md:justify-center pb-4 md:pb-0">
+              {row.map((item, itemIndex) => (
+                <Link key={`${item.channel}-${item.index}`} href="https://drive.google.com/drive/folders/1JnhCMppSMNmna59w5wNW0VsniaQDmWus?usp=sharing" target="_blank" rel="noopener noreferrer">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8, y: 20 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
-                      delay: (channelImages.indexOf(channel) * 3 + imageIndex) * 0.1,
+                      delay: (rowIndex * 9 + itemIndex) * 0.1,
                       duration: 0.2,
                       type: "spring",
                       stiffness: 100
@@ -99,23 +112,21 @@ export function CaseStudies() {
                       y: -8,
                       transition: { duration: 0.2 }
                     }}
-                    className="relative w-40 h-40 rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-200 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group cursor-pointer"
+                    className="relative w-40 h-40 rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-200 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group cursor-pointer flex-shrink-0"
                   >
                     <Image
-                      src={image}
-                      alt={`${channel.channel} thumbnail ${imageIndex + 1}`}
+                      src={item.image}
+                      alt={`${item.channel} thumbnail ${item.index + 1}`}
                       fill
                       className="object-cover"
                       sizes="160px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-
-                 
                   </motion.div>
                 </Link>
-              ))
-            )}
-          </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </section>
