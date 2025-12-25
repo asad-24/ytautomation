@@ -99,7 +99,7 @@ export function HowItWorks() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        transition={{ duration: 0.2, delay: 0.2 }}
         className="text-center mb-12"
       >
         <div className="flex items-center justify-center gap-3 mb-3">
@@ -115,7 +115,7 @@ export function HowItWorks() {
 
       <div className="relative">
         {/* Timeline line - hidden on mobile */}
-        <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 via-pink-500 to-purple-600 opacity-30 rounded-full" />
+        <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-linear-to-b from-purple-500 via-pink-500 to-purple-600 opacity-30 rounded-full" />
 
         <div className="space-y-6 lg:space-y-1">
           {steps.map((step, index) => (
@@ -123,17 +123,17 @@ export function HowItWorks() {
               key={`${title}-${step.number}`}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
+              transition={{ delay: index * 0.1, duration: 0.2 }}
               className={`relative flex items-center ${
                 index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
               }`}
             >
               {/* Content Card */}
               <div className="flex-1 lg:w-5/12">
-                <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-3 hover:scale-105 hover:border-purple-500/50 transition-all duration-500 group hover:shadow-[0_0_40px_rgba(147,51,234,0.2)] overflow-hidden">
+                <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-3 hover:scale-105 hover:border-purple-500/50 transition-all duration-200 group hover:shadow-[0_0_40px_rgba(147,51,234,0.2)] overflow-hidden">
                   {/* Gradient background overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className={`absolute top-0 ${index % 2 === 0 ? 'right-0' : 'left-0'} w-32 h-32 bg-purple-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                  <div className="absolute inset-0 bg-linear-to-br from-purple-500/0 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  <div className={`absolute top-0 ${index % 2 === 0 ? 'right-0' : 'left-0'} w-32 h-32 bg-purple-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200`} />
 
                   <div className="relative z-10">
                     <div className="text-2xl mb-2 drop-shadow-[0_0_10px_rgba(239,68,68,0.3)]">{step.icon}</div>
@@ -181,7 +181,7 @@ export function HowItWorks() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.2 }}
           className="text-center mb-4"
         >
           <h2 className="text-4xl sm:text-3xl font-bold mb-3">
@@ -206,7 +206,7 @@ export function HowItWorks() {
               onClick={() => setShowBeginners(!showBeginners)}
               className="relative w-16 h-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full transition-all duration-300 hover:border-purple-500/50 hover:shadow-[0_0_20px_rgba(147,51,234,0.3)]"
             >
-              <div className={`absolute top-1 w-6 h-6 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full transition-all duration-300 shadow-lg ${
+              <div className={`absolute top-1 w-6 h-6 bg-linear-to-r from-purple-500 to-pink-600 rounded-full transition-all duration-300 shadow-lg ${
                 showBeginners ? 'left-1' : 'left-9'
               }`} />
             </button>

@@ -64,7 +64,7 @@ export function CaseStudies() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.2 }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -90,7 +90,7 @@ export function CaseStudies() {
                     viewport={{ once: true }}
                     transition={{
                       delay: (channelImages.indexOf(channel) * 3 + imageIndex) * 0.1,
-                      duration: 0.5,
+                      duration: 0.2,
                       type: "spring",
                       stiffness: 100
                     }}
@@ -99,7 +99,7 @@ export function CaseStudies() {
                       y: -8,
                       transition: { duration: 0.2 }
                     }}
-                    className="relative w-40 h-40 rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group cursor-pointer"
+                    className="relative w-40 h-40 rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-200 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group cursor-pointer"
                   >
                     <Image
                       src={image}
@@ -108,7 +108,7 @@ export function CaseStudies() {
                       className="object-cover"
                       sizes="160px"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
                  
                   </motion.div>

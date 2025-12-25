@@ -82,10 +82,10 @@ export function Testimonials() {
 
         {/* Testimonial Slider */}
         <div className="relative">
-          <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 relative overflow-hidden group hover:border-purple-500/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(147,51,234,0.2)]">
+          <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 relative overflow-hidden group hover:border-purple-500/50 transition-all duration-200 hover:shadow-[0_0_50px_rgba(147,51,234,0.2)]">
             {/* Gradient background overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute -top-20 -right-20 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
             
             {/* Quote icon */}
             <Quote className="absolute top-6 right-6 h-16 w-16 text-purple-500/20 drop-shadow-[0_0_10px_rgba(147,51,234,0.3)]" />
@@ -95,7 +95,7 @@ export function Testimonials() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.2 }}
               className="relative z-10"
             >
               {/* Rating */}
@@ -134,7 +134,7 @@ export function Testimonials() {
               variant="outline"
               size="icon"
               onClick={prevTestimonial}
-              className="backdrop-blur-xl bg-white/5 border-white/20 hover:bg-white/10 hover:border-purple-500/50 rounded-full text-white hover:text-purple-400 transition-all duration-300"
+              className="backdrop-blur-xl bg-white/5 border-white/20 hover:bg-white/10 hover:border-purple-500/50 rounded-full text-white hover:text-purple-400 transition-all duration-200"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -146,7 +146,7 @@ export function Testimonials() {
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
+                  className={`h-2 rounded-full transition-all duration-200 ${
                     index === activeIndex
                       ? "w-8 bg-gradient-to-r from-purple-500 to-pink-600 shadow-[0_0_10px_rgba(147,51,234,0.6)]"
                       : "w-2 bg-white/30 hover:bg-white/50"
@@ -160,7 +160,7 @@ export function Testimonials() {
               variant="outline"
               size="icon"
               onClick={nextTestimonial}
-              className="backdrop-blur-xl bg-white/5 border-white/20 hover:bg-white/10 hover:border-purple-500/50 rounded-full text-white hover:text-purple-400 transition-all duration-300"
+              className="backdrop-blur-xl bg-white/5 border-white/20 hover:bg-white/10 hover:border-purple-500/50 rounded-full text-white hover:text-purple-400 transition-all duration-200"
               aria-label="Next testimonial"
             >
               <ChevronRight className="h-5 w-5" />
