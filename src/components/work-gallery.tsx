@@ -1,15 +1,11 @@
 "use client"
 
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { useState } from "react"
 import Image from "next/image"
-import { X, ChevronLeft, ChevronRight } from "lucide-react"
-import { useInView } from "@/hooks/use-in-view"
-import { Button } from "./ui/button"
+import Link from "next/link"
 
 export function WorkGallery() {
-  const { ref, isInView } = useInView({ threshold: 0.1 })
-  const [selectedImage, setSelectedImage] = useState<number | null>(null)
   const [isPausedRow1, setIsPausedRow1] = useState(false)
   const [isPausedRow2, setIsPausedRow2] = useState(false)
 
@@ -52,28 +48,6 @@ export function WorkGallery() {
   // Duplicate arrays for seamless loop
   const duplicatedRow1 = [...row1Images, ...row1Images]
   const duplicatedRow2 = [...row2Images, ...row2Images]
-
-  const allWorks = [...row1Images, ...row2Images]
-
-  const openLightbox = (index: number) => {
-    setSelectedImage(index)
-    document.body.style.overflow = "hidden"
-  }
-
-  const closeLightbox = () => {
-    setSelectedImage(null)
-    document.body.style.overflow = "auto"
-  }
-
-  const navigateImage = (direction: "prev" | "next") => {
-    if (selectedImage === null) return
-    
-    if (direction === "prev") {
-      setSelectedImage(selectedImage === 0 ? allWorks.length - 1 : selectedImage - 1)
-    } else {
-      setSelectedImage((selectedImage + 1) % allWorks.length)
-    }
-  }
 
   return (
     <>
@@ -118,12 +92,11 @@ export function WorkGallery() {
             }}
           >
             {duplicatedRow1.map((image, index) => (
-              <motion.div
-                key={`row1-${index}`}
-                className="shrink-0 w-80 h-48 relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group"
-                onClick={() => setSelectedImage(index % row1Images.length)}
-                whileHover={{ y: -8 }}
-              >
+              <Link key={`row1-${index}`} href="https://drive.google.com/drive/folders/1JnhCMppSMNmna59w5wNW0VsniaQDmWus?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <motion.div
+                  className="shrink-0 w-80 h-48 relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group"
+                  whileHover={{ y: -8 }}
+                >
                 <Image
                   src={image}
                   alt={`Work ${index + 1}`}
@@ -136,6 +109,7 @@ export function WorkGallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-0 bg-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
+            </Link>
             ))}
           </motion.div>
         </div>
@@ -160,12 +134,11 @@ export function WorkGallery() {
             }}
           >
             {duplicatedRow2.map((image, index) => (
-              <motion.div
-                key={`row2-${index}`}
-                className="shrink-0 w-80 h-48 relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group"
-                onClick={() => setSelectedImage(row1Images.length + (index % row2Images.length))}
-                whileHover={{ y: -8 }}
-              >
+              <Link key={`row2-${index}`} href="https://drive.google.com/drive/folders/1JnhCMppSMNmna59w5wNW0VsniaQDmWus?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <motion.div
+                  className="shrink-0 w-80 h-48 relative rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group"
+                  whileHover={{ y: -8 }}
+                >
                 <Image
                   src={image}
                   alt={`Work ${row1Images.length + index + 1}`}
@@ -178,79 +151,11 @@ export function WorkGallery() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-0 bg-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
+            </Link>
             ))}
           </motion.div>
         </div>
       </section>
-
-      {/* Lightbox Modal */}
-      <AnimatePresence>
-        {selectedImage !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4"
-            onClick={closeLightbox}
-          >
-            {/* Close button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute top-4 right-4 z-10 text-white hover:bg-purple-500/20 hover:text-purple-500"
-              onClick={closeLightbox}
-              aria-label="Close"
-            >
-              <X className="h-6 w-6" />
-            </Button>
-
-            {/* Navigation */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute left-4 z-10 text-white hover:bg-purple-500/20 hover:text-purple-500"
-              onClick={(e) => {
-                e.stopPropagation()
-                navigateImage("prev")
-              }}
-              aria-label="Previous"
-            >
-              <ChevronLeft className="h-8 w-8" />
-            </Button>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute right-4 z-10 text-white hover:bg-purple-500/20 hover:text-purple-500"
-              onClick={(e) => {
-                e.stopPropagation()
-                navigateImage("next")
-              }}
-              aria-label="Next"
-            >
-              <ChevronRight className="h-8 w-8" />
-            </Button>
-
-            {/* Image */}
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="relative max-w-5xl w-full aspect-video backdrop-blur-xl bg-white/5 border border-purple-500/30 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(147,51,234,0.3)]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={allWorks[selectedImage]}
-                alt={`Work ${selectedImage + 1}`}
-                fill
-                className="object-contain"
-                priority
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   )
 }

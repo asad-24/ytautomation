@@ -3,6 +3,7 @@
 import { useInView } from "@/hooks/use-in-view"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 export function CaseStudies() {
   const { ref, isInView } = useInView({ threshold: 0.2 })
@@ -30,6 +31,28 @@ export function CaseStudies() {
         "/CHANNEL 3/rush for gold (1).jpeg",
         "/CHANNEL 3/rush for gold (2).jpeg",
         "/CHANNEL 3/rush for gold (3).jpeg",
+      ]
+    },
+    {
+      channel: "Achievements",
+      images: [
+        "/Achivements/1.jpeg",
+        "/Achivements/2.jpeg",
+        "/Achivements/3.jpeg",
+        "/Achivements/4.jpeg",
+        "/Achivements/5.jpeg",
+        "/Achivements/6.jpeg",
+        "/Achivements/7.jpeg",
+        "/Achivements/8.jpeg",
+        "/Achivements/9.jpeg",
+        "/Achivements/10.jpeg",
+        "/Achivements/11.jpeg",
+        "/Achivements/12.jpeg",
+        "/Achivements/13.jpeg",
+        "/Achivements/14.jpeg",
+        "/Achivements/15.jpeg",
+        "/Achivements/16.jpeg",
+        "/Achivements/17.jpeg",
       ]
     },
   ]
@@ -60,39 +83,36 @@ export function CaseStudies() {
           <div className="flex flex-wrap gap-4 justify-center">
             {channelImages.flatMap((channel) =>
               channel.images.map((image, imageIndex) => (
-                <motion.div
-                  key={`${channel.channel}-${imageIndex}`}
-                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                  animate={{ y: [0, -8, 0], rotate: [0, 5, -5, 0], x: [0, 5, -5, 0] }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: (channelImages.indexOf(channel) * 3 + imageIndex) * 0.1,
-                    duration: 0.5,
-                    type: "spring",
-                    stiffness: 100,
-                    y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
-                    rotate: { repeat: Infinity, duration: 4, ease: "easeInOut" },
-                    x: { repeat: Infinity, duration: 4, ease: "easeInOut" }
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    y: -8,
-                    transition: { duration: 0.2 }
-                  }}
-                  className="relative w-40 h-40 rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group cursor-pointer"
-                >
-                  <Image
-                    src={image}
-                    alt={`${channel.channel} thumbnail ${imageIndex + 1}`}
-                    fill
-                    className="object-cover"
-                    sizes="160px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Link key={`${channel.channel}-${imageIndex}`} href="https://drive.google.com/drive/folders/1JnhCMppSMNmna59w5wNW0VsniaQDmWus?usp=sharing" target="_blank" rel="noopener noreferrer">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: (channelImages.indexOf(channel) * 3 + imageIndex) * 0.1,
+                      duration: 0.5,
+                      type: "spring",
+                      stiffness: 100
+                    }}
+                    whileHover={{
+                      scale: 1.05,
+                      y: -8,
+                      transition: { duration: 0.2 }
+                    }}
+                    className="relative w-40 h-40 rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group cursor-pointer"
+                  >
+                    <Image
+                      src={image}
+                      alt={`${channel.channel} thumbnail ${imageIndex + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes="160px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-               
-                </motion.div>
+                 
+                  </motion.div>
+                </Link>
               ))
             )}
           </div>

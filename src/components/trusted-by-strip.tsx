@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 
 export function TrustedByStrip() {
   const [isPaused, setIsPaused] = useState(false)
@@ -57,20 +58,21 @@ export function TrustedByStrip() {
           }}
         >
           {duplicatedLogos.map((logo, index) => (
-            <div
-              key={index}
-              className="shrink-0 w-36 h-24 backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl overflow-hidden hover:border-purple-500/50 hover:bg-white/15 transition-all duration-300 hover:scale-105"
-            >
-              <div className="relative w-full h-full">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 40vw, 192px"
-                />
+            <Link key={index} href="https://drive.google.com/drive/folders/1JnhCMppSMNmna59w5wNW0VsniaQDmWus?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <div
+                className="shrink-0 w-36 h-24 backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl overflow-hidden hover:border-purple-500/50 hover:bg-white/15 transition-all duration-300 hover:scale-105 cursor-pointer"
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 40vw, 192px"
+                  />
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </motion.div>
       </div>

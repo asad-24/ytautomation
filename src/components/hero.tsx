@@ -124,7 +124,7 @@ export function Hero() {
                 variant="outline"
                 className="group glass-light dark:glass-dark hover:scale-105 transition-all duration-300 text-base px-6 py-4"
               >
-                <Link href="#work">
+                <Link href="https://wa.me/923187588853" target="_blank" rel="noopener noreferrer">
                   <Play className="mr-2 h-4 w-4" />
                   See Our Work
                 </Link>

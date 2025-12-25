@@ -12,6 +12,7 @@ import { LiquidBackgroundEngine } from "@/components/liquid-background-engine";
 import { LiquidSection } from "@/components/liquid-section";
 import { YoutubeBubbles } from "@/components/youtube-bubbles";
 import FAQAccordion from "@/components/faq-accordion";
+import { StickyCTA } from "@/components/sticky-cta";
 
 export default function Home() {
   return (
@@ -57,6 +58,7 @@ export default function Home() {
           <Footer />
         </LiquidSection>
       </main>
+      <StickyCTA />
     </>
   );
 }

@@ -254,3 +254,7 @@ html {
     animation: none;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
