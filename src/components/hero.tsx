@@ -111,7 +111,7 @@ export function Hero() {
               >
                 <Link href="https://wa.me/923030249973" target="_blank" rel="noopener noreferrer">
                   <span className="relative z-10 flex items-center">
-                    Book a Call
+                    GET STARTED
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-purple-700 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
