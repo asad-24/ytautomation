@@ -7,6 +7,7 @@ import Link from "next/link"
 
 export function TrustedByStrip() {
   const [isPaused, setIsPaused] = useState(false)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const scrollerRef = useRef<HTMLDivElement>(null)
 
   // Trusted creator logos
@@ -61,6 +62,7 @@ export function TrustedByStrip() {
         
               <div
                 className="shrink-0 w-36 h-24 backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl overflow-hidden hover:border-purple-500/50 hover:bg-white/15 transition-all duration-300 hover:scale-105 cursor-pointer"
+                onClick={() => setSelectedImage(logo.src)}
               >
                 <div className="relative w-full h-full">
                   <Image
@@ -76,6 +78,39 @@ export function TrustedByStrip() {
           ))}
         </motion.div>
       </div>
+
+      {/* Full-size image modal */}
+      {selectedImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            className="relative max-w-4xl max-h-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={selectedImage}
+              alt="Full size image"
+              width={800}
+              height={600}
+              className="w-full h-auto object-contain rounded-lg"
+            />
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+            >
+              ✕
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
     </section>
   )
 }

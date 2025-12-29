@@ -4,9 +4,11 @@ import { useInView } from "@/hooks/use-in-view"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { useState } from "react"
 
 export function CaseStudies() {
   const { ref, isInView } = useInView({ threshold: 0.2 })
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   const channelImages = [
     {
@@ -113,6 +115,7 @@ export function CaseStudies() {
                       transition: { duration: 0.2 }
                     }}
                     className="relative w-40 h-40 rounded-2xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all duration-200 hover:shadow-[0_0_30px_rgba(147,51,234,0.3)] group cursor-pointer flex-shrink-0"
+                    onClick={() => setSelectedImage(item.image)}
                   >
                     <Image
                       src={item.image}
@@ -128,6 +131,39 @@ export function CaseStudies() {
             </div>
           ))}
         </div>
+
+        {/* Full-size image modal */}
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="relative max-w-4xl max-h-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={selectedImage}
+                alt="Full size image"
+                width={800}
+                height={600}
+                className="w-full h-auto object-contain rounded-lg"
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors"
+              >
+                ✕
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
       </div>
     </section>
   )
