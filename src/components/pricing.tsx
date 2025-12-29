@@ -89,12 +89,12 @@ export function Pricing() {
       recommended: true,
     },
     {
-      name: "Seconds Commercial Ad",
+      name: "Commercial Ad",
       description: "Professional commercial advertisement",
       originalPrice: 250,
       discountedPrice: 200,
       features: [
-        "Seconds Commercial Ad",
+        "Commercial Ad",
         "Voiceover",
         "Scriptwriting",
         "Cinematic Footages",
