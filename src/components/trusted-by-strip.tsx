@@ -58,7 +58,7 @@ export function TrustedByStrip() {
           }}
         >
           {duplicatedLogos.map((logo, index) => (
-            <Link key={index} href="https://drive.google.com/drive/folders/1JnhCMppSMNmna59w5wNW0VsniaQDmWus?usp=sharing" target="_blank" rel="noopener noreferrer">
+        
               <div
                 className="shrink-0 w-36 h-24 backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl overflow-hidden hover:border-purple-500/50 hover:bg-white/15 transition-all duration-300 hover:scale-105 cursor-pointer"
               >
@@ -72,7 +72,7 @@ export function TrustedByStrip() {
                   />
                 </div>
               </div>
-            </Link>
+     
           ))}
         </motion.div>
       </div>

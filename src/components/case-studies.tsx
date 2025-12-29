@@ -96,7 +96,7 @@ export function CaseStudies() {
           {rows.map((row, rowIndex) => (
             <div key={rowIndex} className="flex gap-4 overflow-x-auto md:overflow-x-visible md:flex-wrap md:justify-center pb-4 md:pb-0">
               {row.map((item, itemIndex) => (
-                <Link key={`${item.channel}-${item.index}`} href="https://drive.google.com/drive/folders/1JnhCMppSMNmna59w5wNW0VsniaQDmWus?usp=sharing" target="_blank" rel="noopener noreferrer">
+                
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8, y: 20 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -123,7 +123,7 @@ export function CaseStudies() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                   </motion.div>
-                </Link>
+               
               ))}
             </div>
           ))}
