@@ -61,6 +61,7 @@ export function TrustedByStrip() {
           {duplicatedLogos.map((logo, index) => (
         
               <div
+                key={`${logo.src}-${index}`}
                 className="shrink-0 w-36 h-24 backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl overflow-hidden hover:border-purple-500/50 hover:bg-white/15 transition-all duration-300 hover:scale-105 cursor-pointer"
                 onClick={() => setSelectedImage(logo.src)}
               >

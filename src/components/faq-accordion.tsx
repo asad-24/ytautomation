@@ -2,34 +2,10 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, X, ArrowRight, Check } from 'lucide-react';
-import { AddToCartModal } from './add-to-cart-modal';
+import Link from 'next/link';
 
 const FAQAccordion = () => {
   const [openItems, setOpenItems] = useState([0, 1]);
-  const [modalState, setModalState] = useState<{
-    isOpen: boolean
-    planName: string
-    planPrice: number
-    planDescription: string
-  }>({
-    isOpen: false,
-    planName: "",
-    planPrice: 0,
-    planDescription: "",
-  })
-
-  const openModal = (planName: string, planPrice: number, planDescription: string) => {
-    setModalState({
-      isOpen: true,
-      planName,
-      planPrice,
-      planDescription,
-    })
-  }
-
-  const closeModal = () => {
-    setModalState(prev => ({ ...prev, isOpen: false }))
-  }
 
   const faqs = [
     {
@@ -122,22 +98,14 @@ const FAQAccordion = () => {
 
         {/* Get Started button */}
         <div className="flex justify-center">
-          <button
-            onClick={() => openModal("Custom Package", 0, "Let's discuss your specific video production needs")}
-            className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 hover:bg-gradient-to-r hover:from-purple-700 hover:to-pink-800 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(147,51,234,0.4)] hover:shadow-[0_0_30px_rgba(147,51,234,0.6)] cursor-pointer"
-          >
-            Get Started
-          </button>
+          <Link href="/cart?plan=Custom Package&price=0&description=Let's discuss your specific video production needs&features=[]">
+            <button
+              className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 hover:bg-gradient-to-r hover:from-purple-700 hover:to-pink-800 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(147,51,234,0.4)] hover:shadow-[0_0_30px_rgba(147,51,234,0.6)] cursor-pointer"
+            >
+              Get Started
+            </button>
+          </Link>
         </div>
-
-        {/* Add to Cart Modal */}
-        <AddToCartModal
-          isOpen={modalState.isOpen}
-          onClose={closeModal}
-          planName={modalState.planName}
-          planPrice={modalState.planPrice}
-          planDescription={modalState.planDescription}
-        />
       </div>
     </section>
   );

@@ -5,35 +5,9 @@ import { Check, Sparkles } from "lucide-react"
 import { Button } from "./ui/button"
 import Link from "next/link"
 import { useInView } from "@/hooks/use-in-view"
-import { AddToCartModal } from "./add-to-cart-modal"
-import { useState } from "react"
 
 export function Pricing() {
   const { ref, isInView } = useInView({ threshold: 0.1 })
-  const [modalState, setModalState] = useState<{
-    isOpen: boolean
-    planName: string
-    planPrice: number
-    planDescription: string
-  }>({
-    isOpen: false,
-    planName: "",
-    planPrice: 0,
-    planDescription: "",
-  })
-
-  const openModal = (planName: string, planPrice: number, planDescription: string) => {
-    setModalState({
-      isOpen: true,
-      planName,
-      planPrice,
-      planDescription,
-    })
-  }
-
-  const closeModal = () => {
-    setModalState(prev => ({ ...prev, isOpen: false }))
-  }
 
   const plans = [
     {
@@ -52,7 +26,22 @@ export function Pricing() {
       popular: false,
     },
     {
-      name: "Standard",
+      name: "Per Video",
+      description: "Pay per video - perfect for testing our service",
+      originalPrice: 50,
+      discountedPrice: 40,
+      features: [
+        "10–15 minutes video duration",
+        "Script",
+        "Voiceover",
+        "Thumbnail",
+        "Review",
+      ],
+      gradient: "from-green-600 to-blue-600",
+      popular: false,
+    },
+    {
+      name: "10 Videos",
       description: "Perfect for channels ready to step up their content game",
       originalPrice: 450,
       discountedPrice: 399,
@@ -70,7 +59,7 @@ export function Pricing() {
       popular: true,
     },
     {
-      name: "Premium",
+      name: "15 Videos",
       description: "Your monthly solution for consistent growth",
       originalPrice: 800,
       discountedPrice: 699,
@@ -87,23 +76,6 @@ export function Pricing() {
       gradient: "from-pink-600 to-purple-700",
       popular: false,
       recommended: true,
-    },
-    {
-      name: "Commercial Ad",
-      description: "Professional commercial advertisement",
-      originalPrice: 250,
-      discountedPrice: 200,
-      features: [
-        "Commercial Ad",
-        "Voiceover",
-        "Scriptwriting",
-        "Cinematic Footages",
-        "Text Overlay",
-        "High Quality Editing",
-        "Unlimited revisions",
-      ],
-      gradient: "from-red-600 to-red-700",
-      popular: false,
     },
   ]
 
@@ -210,16 +182,14 @@ export function Pricing() {
                 </ul>
 
                 {/* CTA Button */}
-                <Button
-                  onClick={() => openModal(plan.name, getPrice(plan.originalPrice, plan.discountedPrice), plan.description)}
-                  className={`w-full cursor-pointer transition-all duration-300 ${
-                    plan.popular
-                      ? "bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white border-0 shadow-[0_0_20px_rgba(147,51,234,0.4)] hover:shadow-[0_0_30px_rgba(147,51,234,0.6)] hover:bg-gradient-to-r hover:from-purple-700 hover:to-pink-800"
-                      : "backdrop-blur-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-purple-500/50 text-white hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-600/20"
-                  }`}
-                  size="lg"
-                >
-                  Get Started
+                <Button asChild className={`w-full cursor-pointer transition-all duration-300 ${
+                  plan.popular
+                    ? "bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white border-0 shadow-[0_0_20px_rgba(147,51,234,0.4)] hover:shadow-[0_0_30px_rgba(147,51,234,0.6)] hover:bg-gradient-to-r hover:from-purple-700 hover:to-pink-800"
+                    : "backdrop-blur-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-purple-500/50 text-white hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-600/20"
+                }`} size="lg">
+                  <Link href={`/cart?plan=${encodeURIComponent(plan.name)}&price=${plan.discountedPrice || plan.originalPrice}&description=${encodeURIComponent(plan.description)}&features=${encodeURIComponent(JSON.stringify(plan.features))}`}>
+                    Get Started
+                  </Link>
                 </Button>
               </div>
             </motion.div>
@@ -242,15 +212,6 @@ export function Pricing() {
           </Button>
         </motion.div>
       </div>
-
-      {/* Add to Cart Modal */}
-      <AddToCartModal
-        isOpen={modalState.isOpen}
-        onClose={closeModal}
-        planName={modalState.planName}
-        planPrice={modalState.planPrice}
-        planDescription={modalState.planDescription}
-      />
     </section>
   )
 }
