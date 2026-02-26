@@ -109,7 +109,7 @@ export function Hero() {
                 size="lg"
                 className="group relative overflow-hidden bg-gradient-to-r from-purple-700 to-pink-700 hover:from-purple-800 hover:to-pink-800 text-white border-0 shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:-translate-y-1 text-base px-6 py-4"
               >
-                <Link href="https://wa.me/923187588853" target="_blank" rel="noopener noreferrer">
+                <Link href="https://wa.me/923140602566" target="_blank" rel="noopener noreferrer">
                   <span className="relative z-10 flex items-center">
                     Start now
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

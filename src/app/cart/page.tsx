@@ -57,7 +57,7 @@ function CartContent() {
             size="lg"
           >
             <Link
-              href={`https://wa.me/923187588853?text=Hi! I'm interested in the ${planName} package ($${planPrice}). Can we discuss the details?`}
+              href={`https://wa.me/923140602566?text=Hi! I'm interested in the ${planName} package ($${planPrice}). Can we discuss the details?`}
               target="_blank"
               rel="noopener noreferrer"
             >

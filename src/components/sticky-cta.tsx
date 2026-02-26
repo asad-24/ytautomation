@@ -8,7 +8,7 @@ export function StickyCTA() {
     <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-40">
       <div className="rounded-full shadow-2xl backdrop-blur-xl bg-purple-600">
         <Link
-          href="https://wa.me/923187588853"
+          href="https://wa.me/923140602566"
           target="_blank"
           rel="noopener noreferrer"
           id="book-call"

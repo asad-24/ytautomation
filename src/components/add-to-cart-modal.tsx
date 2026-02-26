@@ -22,7 +22,7 @@ export function AddToCartModal({ isOpen, onClose, planName, planPrice, planDescr
     // Simulate adding to cart
     setTimeout(() => {
       // Redirect to WhatsApp
-      window.open(`https://wa.me/923187588853?text=Hi! I'm interested in the ${planName} package ($${planPrice}). Can we discuss the details?`, '_blank')
+      window.open(`https://wa.me/923140602566?text=Hi! I'm interested in the ${planName} package ($${planPrice}). Can we discuss the details?`, '_blank')
       onClose()
       setIsAdded(false)
     }, 1500)

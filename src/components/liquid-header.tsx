@@ -179,7 +179,7 @@ export function LiquidHeader() {
                   className="hidden sm:flex relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
                 >
                   <Link
-                    href="https://wa.me/923187588853"
+                    href="https://wa.me/923140602566"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => {
@@ -248,7 +248,7 @@ export function LiquidHeader() {
                   className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white"
                 >
                   <Link
-                    href="https://wa.me/923187588853"
+                    href="https://wa.me/923140602566"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => {
