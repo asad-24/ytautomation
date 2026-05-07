@@ -28,8 +28,8 @@ export function Pricing() {
     {
       name: "Per Video",
       description: "Pay per video - perfect for testing our service",
-      originalPrice: 50,
-      discountedPrice: 40,
+      originalPrice: 60,
+      discountedPrice: 50,
       features: [
         "10-15 minute professional video production",
         "Custom-written script tailored to your content",
@@ -43,8 +43,8 @@ export function Pricing() {
     {
       name: "10 Videos",
       description: "Perfect for channels ready to step up their content game",
-      originalPrice: 450,
-      discountedPrice: 399,
+      originalPrice: 600,
+      discountedPrice: 500,
       features: [
         "10 high-quality videos",
         "Duration 10-15 minutes",
@@ -61,8 +61,8 @@ export function Pricing() {
     {
       name: "15 Videos",
       description: "Your monthly solution for consistent growth",
-      originalPrice: 800,
-      discountedPrice: 699,
+      originalPrice: 900,
+      discountedPrice: 700,
       features: [
         "15 high-quality videos",
         "Duration 10-15 minutes",
